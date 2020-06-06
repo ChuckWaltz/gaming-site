@@ -1,0 +1,110 @@
+header {
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  height: 75px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+  z-index: 1000;
+}
+
+#logo-container {
+  height: 60%;
+  min-width: 120px;
+  margin-left: 16px;
+  cursor: pointer;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+
+  height: 100%;
+
+  padding-left: 24px;
+  padding-right: 16px;
+
+  .navItem {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: white;
+    cursor: pointer;
+
+    fa-icon {
+      margin-left: 7px;
+    }
+
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+
+  .navItemList {
+    &:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+  }
+
+  .navItemsEnd {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    height: 100%;
+
+    .navItem {
+      font-size: 18px;
+    }
+
+    .navItemList {
+      height: 100%;
+    }
+
+    fa-icon {
+      margin: 0;
+    }
+  }
+
+  #subscribe-button {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 0 16px;
+
+    fa-icon {
+      font-size: 16px;
+      margin-right: 10px;
+    }
+
+    &:hover {
+      background-color: white;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  nav {
+    .navItem {
+      font-size: 14px;
+    }
+
+    .navItemsEnd .navItem {
+      font-size: 20px;
+    }
+  }
+}

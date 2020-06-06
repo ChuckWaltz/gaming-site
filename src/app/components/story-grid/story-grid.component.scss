@@ -1,0 +1,100 @@
+.storyGrid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2px;
+
+  .sgi {
+    position: relative;
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    flex-basis: calc(100% - 2px * 2);
+
+    height: 150px;
+    margin: 2px;
+
+    background-color: lightgray;
+  }
+}
+
+@media (min-width: 600px) {
+  .storyGrid {
+    .sgi {
+      flex-basis: calc(50% - 2px * 2);
+      height: 300px;
+    }
+
+    .sgi-large {
+      flex-basis: calc(100% - 2px * 2);
+    }
+
+    .sgi-medium {
+      flex-basis: calc(100% - 2px * 2);
+    }
+
+    .sgi-corner:after {
+      display: block;
+      width: 0;
+      height: 0;
+      border: 0 solid transparent;
+      border-right-color: white;
+      border-width: 0 45px 45px 0;
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 5;
+    }
+
+    .sgi-corner-bot:after {
+      display: block;
+      width: 0;
+      height: 0;
+      border: 0 solid transparent;
+      border-left-color: white;
+      border-width: 45px 0 0 45px;
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 5;
+    }
+  }
+}
+
+@media (min-width: 728px) {
+  .storyGrid {
+    .sgi {
+      flex-basis: calc(33% - 2px * 2);
+    }
+
+    .sgi-large {
+      flex-basis: calc(100% - 2px * 2);
+    }
+
+    .sgi-medium {
+      flex-basis: calc(100% - 2px * 2);
+    }
+  }
+}
+
+@media (min-width: 1100px) {
+  .storyGrid {
+    .sgi {
+      flex-basis: calc(25% - 2px * 2);
+    }
+
+    .sgi-large {
+      flex-basis: calc(75% - 2px * 2);
+      height: 348px;
+    }
+
+    .sgi-medium {
+      flex-basis: calc(50% - 2px * 2);
+    }
+
+    .sgi-mt {
+      margin-top: 50px;
+    }
+  }
+}
