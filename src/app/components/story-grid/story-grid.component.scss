@@ -1,7 +1,11 @@
 .storyGrid {
   display: flex;
   flex-wrap: wrap;
-  margin: 2px;
+  align-items: stretch;
+  margin: auto;
+  padding: 2px;
+  height: 1200px;
+  min-height: 1000px;
 
   .sgi {
     position: relative;
@@ -10,7 +14,6 @@
 
     flex-basis: calc(100% - 2px * 2);
 
-    height: 150px;
     margin: 2px;
 
     background-color: lightgray;
@@ -21,7 +24,6 @@
   .storyGrid {
     .sgi {
       flex-basis: calc(50% - 2px * 2);
-      height: 300px;
     }
 
     .sgi-large {
@@ -78,15 +80,18 @@
   }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1200px) {
   .storyGrid {
+    height: 80vw;
+    max-height: 1075px;
+    min-height: 985px;
+    max-width: 1600px;
     .sgi {
       flex-basis: calc(25% - 2px * 2);
     }
 
     .sgi-large {
       flex-basis: calc(75% - 2px * 2);
-      height: 348px;
     }
 
     .sgi-medium {

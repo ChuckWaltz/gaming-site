@@ -13,3 +13,33 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+
+.show-md {
+  display: none !important;
+}
+
+.show-lg {
+  display: none !important;
+}
+
+.show-xl {
+  display: none !important;
+}
+
+@media (min-width: 600px) {
+  .show-md {
+    display: inherit !important;
+  }
+}
+
+@media (min-width: 728px) {
+  .show-lg {
+    display: inherit !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .show-xl {
+    display: inherit !important;
+  }
+}

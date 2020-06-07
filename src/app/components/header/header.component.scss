@@ -4,19 +4,23 @@ header {
     var(--primary-color),
     var(--secondary-color)
   );
-  height: 75px;
-
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-
+  overflow-x: hidden;
   z-index: 1000;
+  position: relative;
+}
+
+#nav-container {
+  width: 1600px;
+  max-width: 100vw;
+  margin: auto;
+  height: 100%;
 }
 
 #logo-container {
-  height: 60%;
   min-width: 120px;
-  margin-left: 16px;
+  max-width: 120px;
+  margin: auto;
+  margin-top: 10px;
   cursor: pointer;
 
   img {
@@ -32,14 +36,15 @@ nav {
 
   height: 100%;
 
-  padding-left: 24px;
-  padding-right: 16px;
+  padding: 0;
 
   .navItem {
     display: flex;
     align-items: center;
+    flex-grow: 1;
+    justify-content: center;
     padding: 10px 15px;
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 1px;
     color: white;
     cursor: pointer;
@@ -84,7 +89,7 @@ nav {
     font-size: 14px;
     border: 1px solid white;
     border-radius: 5px;
-    margin: 0 16px;
+    margin: 0 12px;
 
     fa-icon {
       font-size: 16px;
@@ -97,14 +102,56 @@ nav {
   }
 }
 
+@media (max-width: 599px) {
+  nav {
+    #user-button {
+      display: block;
+      position: absolute;
+      top: 7px;
+      right: 7px;
+      height: unset;
+      padding: 10px 13px;
+      border-radius: 50%;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  header {
+    height: 75px;
+  }
+  #nav-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  #logo-container {
+    margin: unset;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 16px;
+  }
+  nav {
+    padding-left: 24px;
+    padding-right: 16px;
+
+    .navItem {
+      flex-grow: unset;
+    }
+  }
+}
+
+@media (min-width: 728px) {
+}
+
 @media (min-width: 1200px) {
   nav {
-    .navItem {
-      font-size: 14px;
-    }
-
     .navItemsEnd .navItem {
       font-size: 20px;
+    }
+
+    .navItemHidden {
+      display: flex;
     }
   }
 }
