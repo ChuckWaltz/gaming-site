@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomePageComponent implements OnInit {
   constructor() {}
 
-  stories: any[] = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
+  stories: any[] = [{}, {}, {}, {}, {}, {}, {}, {}];
 
   ngOnInit(): void {}
 
@@ -16,7 +16,11 @@ export class HomePageComponent implements OnInit {
     return this.stories.slice(0, 8);
   }
 
+  getSubGridStories(): any[] {
+    return this.stories.slice(9, 11);
+  }
+
   getListStories(): any[] {
-    return this.stories.slice(8);
+    return this.stories.slice(12);
   }
 }

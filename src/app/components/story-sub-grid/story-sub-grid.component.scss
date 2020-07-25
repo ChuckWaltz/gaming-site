@@ -1,0 +1,43 @@
+.subGrid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin: auto;
+
+  .sgi {
+    position: relative;
+    flex-grow: 1;
+    flex-shrink: 1;
+    height: 150px;
+
+    flex-basis: calc(100% - 2px * 2);
+
+    margin: 2px;
+
+    background-color: lightgray;
+  }
+}
+
+@media (min-width: 600px) {
+  .subGrid {
+    max-width: min(90vw, 1200px);
+    margin: 40px;
+    .sgi {
+      height: 300px;
+      flex-basis: calc(33.33% - 2px * 2);
+    }
+  }
+}
+
+@media (min-width: 728px) {
+}
+
+@media (min-width: 1200px) {
+  .subGrid {
+    max-width: min(80vw, 1200px);
+    margin: 40px auto;
+    .sgi {
+      height: 350px;
+    }
+  }
+}

@@ -7,9 +7,16 @@ import { HomePageComponent } from './components/pages/home-page/home-page.compon
 import { HeaderComponent } from './components/header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { StoryGridComponent } from './components/story-grid/story-grid.component';
+import { StorySubGridComponent } from './components/story-sub-grid/story-sub-grid.component';
 
 @NgModule({
-  declarations: [AppComponent, HomePageComponent, HeaderComponent, StoryGridComponent],
+  declarations: [
+    AppComponent,
+    HomePageComponent,
+    HeaderComponent,
+    StoryGridComponent,
+    StorySubGridComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent],
