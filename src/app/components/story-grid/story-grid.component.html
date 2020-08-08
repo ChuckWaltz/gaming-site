@@ -1,3 +1,17 @@
 <section class="storyGrid">
-  <div *ngFor="let story of stories; let i = index" class="sgi"></div>
+  <div
+    *ngFor="let story of stories; let i = index"
+    class="sgi"
+    [ngStyle]="{
+      'background-image': 'url(' + story.fields.mainImage.fields.file.url + ')'
+    }"
+  >
+    <div class="sgiContentWrapper">
+      <div class="sgiContent">
+        <div class="sgiTag">{{ story.fields.tags[0] }}</div>
+        <div class="sgiTitle">{{ story.fields.title }}</div>
+        <div class="sgiByLine">By: {{ story.fields.author.fields.name }}</div>
+      </div>
+    </div>
+  </div>
 </section>

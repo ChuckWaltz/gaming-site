@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { StoryService } from 'src/app/services/story-service/story.service';
+import { Entry } from 'contentful';
+import { StoryGridComponent } from '../../story-grid/story-grid.component';
 
 @Component({
   selector: 'app-home-page',
@@ -6,21 +9,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-page.component.scss'],
 })
 export class HomePageComponent implements OnInit {
-  constructor() {}
+  constructor(private storyService: StoryService) {}
 
-  stories: any[] = [{}, {}, {}, {}, {}, {}, {}, {}];
+  @ViewChild(StoryGridComponent) storyGridRef: StoryGridComponent;
 
-  ngOnInit(): void {}
+  private stories: Entry<any>[] = [];
+
+  ngOnInit(): void {
+    this.storyService.getStories().then((stories) => {
+      this.stories = [
+        ...stories,
+        ...stories,
+        ...stories,
+        ...stories,
+        ...stories,
+      ];
+      console.log(this.stories);
+
+      setTimeout(() => {
+        this.storyGridRef.updateGrid();
+      });
+    });
+  }
 
   getGridStories(): any[] {
     return this.stories.slice(0, 8);
   }
 
   getSubGridStories(): any[] {
-    return this.stories.slice(9, 11);
+    return this.stories.slice(8, 11);
   }
 
   getListStories(): any[] {
-    return this.stories.slice(12);
+    return this.stories.slice(11);
   }
 }
