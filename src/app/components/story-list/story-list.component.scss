@@ -1,6 +1,7 @@
 #story-list {
   margin: 2px;
   margin-top: 100px;
+  margin-bottom: 30px;
 }
 
 #story-list-header {
@@ -22,13 +23,12 @@
 }
 
 .listStory {
-  border-bottom: 1px solid lightgray;
-  margin: 2px 0;
+  border-top: 1px solid lightgray;
   display: flex;
   height: 15vw;
   max-height: 200px;
   min-height: 110px;
-  padding: 5px 0;
+  padding-bottom: 10px;
 }
 
 .listStoryImg {
