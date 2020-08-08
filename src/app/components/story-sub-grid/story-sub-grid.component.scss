@@ -69,7 +69,7 @@
 @media (min-width: 600px) {
   .subGrid {
     max-width: min(90vw, 1200px);
-    margin: 40px;
+    margin: 40px auto;
     .sgi {
       height: 300px;
       flex-basis: 0;

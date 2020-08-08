@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import { ScreenSize } from '../../enums/screen-size.enum';
-import { getScreenSize } from 'src/app/utils/common-utils';
+import { getScreenSize } from '../../utils/common-utils';
 
 @Component({
   selector: 'app-story-grid',
