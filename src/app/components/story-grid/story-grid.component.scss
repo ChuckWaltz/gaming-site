@@ -187,5 +187,21 @@
     .sgi-mt {
       margin-top: 50px;
     }
+
+    .sgi:not(.sgi-medium):not(.sgi-large) {
+      .sgiTitle {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1600px) {
+  .storyGrid {
+    .sgi:not(.sgi-medium):not(.sgi-large) {
+      .sgiTitle {
+        font-size: 22px;
+      }
+    }
   }
 }

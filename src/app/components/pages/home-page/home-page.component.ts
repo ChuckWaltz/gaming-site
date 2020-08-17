@@ -16,20 +16,22 @@ export class HomePageComponent implements OnInit {
   private stories: Entry<any>[] = [];
 
   ngOnInit(): void {
-    this.storyService.getStories().then((stories) => {
-      this.stories = [
-        ...stories,
-        ...stories,
-        ...stories,
-        ...stories,
-        ...stories,
-      ];
-      console.log(this.stories);
+    this.storyService
+      .getStories({ order: '-fields.updatedDateTime' })
+      .then((stories) => {
+        this.stories = [
+          ...stories,
+          ...stories,
+          ...stories,
+          ...stories,
+          ...stories,
+        ];
+        console.log(this.stories);
 
-      setTimeout(() => {
-        this.storyGridRef.updateGrid();
+        setTimeout(() => {
+          this.storyGridRef.updateGrid();
+        });
       });
-    });
   }
 
   getGridStories(): any[] {

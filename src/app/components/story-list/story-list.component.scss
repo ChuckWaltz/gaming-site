@@ -1,6 +1,6 @@
 #story-list {
-  margin: 2px;
-  margin-top: 100px;
+  margin: 5px;
+  margin-top: 120px;
   margin-bottom: 30px;
 }
 
@@ -29,15 +29,50 @@
   max-height: 200px;
   min-height: 110px;
   padding-bottom: 10px;
+  cursor: pointer;
+
+  &:hover {
+    .listStoryTitle {
+      color: var(--primary-color);
+    }
+  }
 }
 
 .listStoryImg {
   flex-grow: 1;
+  flex-basis: 0;
   background-color: lightgray;
+  background-position: center;
+  background-size: cover;
 }
 
 .listStoryContent {
   flex-grow: 2;
+  flex-basis: 0;
+  padding: 5px 10px;
+
+  .listStoryTitle {
+    font-weight: bold;
+  }
+
+  .listStoryTag {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2px 6px;
+    font-size: 12px;
+    border-radius: 3px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+  }
+
+  .listStoryByLine {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: lighter;
+    font-style: italic;
+    margin-top: 5px;
+  }
 }
 
 @media (min-width: 600px) {
@@ -52,11 +87,24 @@
 
 @media (min-width: 728px) {
   #story-list {
+    .listStoryContent {
+      .listStoryTitle {
+        font-size: 18px;
+      }
+
+      .listStoryTag {
+      }
+
+      .listStoryByLine {
+        font-size: 14px;
+      }
+    }
   }
 }
 
 @media (min-width: 1200px) {
   #story-list {
     max-width: min(80vw, 1200px);
+    margin-top: 150px;
   }
 }

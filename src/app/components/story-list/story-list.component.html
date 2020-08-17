@@ -3,9 +3,20 @@
     <div id="story-list-header-text">MORE STORIES</div>
   </div>
   <div class="listStory" *ngFor="let story of stories">
-    <div class="listStoryImg"></div>
+    <div
+      class="listStoryImg"
+      [ngStyle]="{
+        'background-image':
+          'url(' + story.fields.mainImage.fields.file.url + ')'
+      }"
+    ></div>
     <div class="listStoryContent">
-      Test
+      <div class="listStoryTag">{{ story.fields.tags[0] }}</div>
+      <div class="listStoryTitle">{{ story.fields.title }}</div>
+      <div class="listStoryByLine">
+        By: {{ story.fields.author.fields.name }} |
+        {{ story.fields.updatedDateTime | date: "MMMM d" }}
+      </div>
     </div>
   </div>
 </section>
