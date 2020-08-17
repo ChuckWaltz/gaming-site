@@ -16,13 +16,15 @@
     background-color: lightgray;
     background-position: center;
     background-size: cover;
+
+    cursor: pointer;
   }
 
   .sgiContentWrapper {
     width: 100%;
     height: 100%;
 
-    padding: 15px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -54,7 +56,7 @@
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .sgiByLine {
@@ -84,6 +86,10 @@
   .subGrid {
     max-width: min(90vw, 1200px);
     margin: 40px auto;
+    .sgiContentWrapper {
+      padding: 15px;
+    }
+
     .sgi {
       height: 300px;
       flex-basis: 0;
@@ -91,7 +97,7 @@
     }
 
     .sgiTitle {
-      font-size: 20px;
+      font-size: 18px;
     }
 
     .sgiContent {
@@ -101,6 +107,11 @@
 }
 
 @media (min-width: 728px) {
+  .subGrid {
+    .sgiTitle {
+      font-size: 20px;
+    }
+  }
 }
 
 @media (min-width: 1200px) {
@@ -109,6 +120,10 @@
     margin: 80px auto;
     .sgi {
       height: 350px;
+    }
+
+    .sgiTitle {
+      font-size: 22px;
     }
   }
 }
