@@ -18,6 +18,12 @@
     background-size: cover;
 
     cursor: pointer;
+
+    transition: 0.15s box-shadow ease;
+
+    &:hover {
+      box-shadow: inset 5px -5px 0px 0px var(--primary-color);
+    }
   }
 
   .sgiContentWrapper {

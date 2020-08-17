@@ -18,6 +18,8 @@
     background-size: cover;
 
     cursor: pointer;
+
+    transition: 0.15s box-shadow ease;
   }
 
   .sgiContentWrapper {
@@ -133,14 +135,26 @@
       .sgiByLine {
         color: black;
       }
+
+      &:hover {
+        .sgiTitle {
+          color: var(--primary-color);
+        }
+      }
     }
 
     .sgi-medium {
       flex-basis: calc(100% - 2px * 2);
+      &:hover {
+        box-shadow: inset 5px -5px 0px 0px var(--primary-color);
+      }
     }
 
     .sgi-large {
       flex-basis: calc(100% - 2px * 2);
+      &:hover {
+        box-shadow: inset 5px -5px 0px 0px var(--primary-color);
+      }
     }
 
     .sgiTitle {
