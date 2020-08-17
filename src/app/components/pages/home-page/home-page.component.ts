@@ -15,6 +15,9 @@ export class HomePageComponent implements OnInit {
 
   private stories: Entry<any>[] = [];
 
+  bottomMarker: HTMLElement;
+  canGetMoreStories: boolean = true;
+
   ngOnInit(): void {
     this.storyService
       .getStories({ order: '-fields.updatedDateTime' })

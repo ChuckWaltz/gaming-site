@@ -3,7 +3,8 @@
     *ngFor="let story of stories; let i = index"
     class="sgi"
     [ngStyle]="{
-      'background-image': 'url(' + story.fields.mainImage.fields.file.url + ')'
+      'background-image': 'url(' + story.fields.mainImage.fields.file.url + ')',
+      'background-position': story.fields.imageFocus
     }"
   >
     <div class="sgiContentWrapper">

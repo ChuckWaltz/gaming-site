@@ -2,7 +2,11 @@
   <div id="story-list-header">
     <div id="story-list-header-text">MORE STORIES</div>
   </div>
-  <div class="listStory" *ngFor="let story of stories">
+  <div
+    class="listStory"
+    *ngFor="let story of stories; let i = index"
+    [ngClass]="{ firstStory: i === 0 }"
+  >
     <div
       class="listStoryImg"
       [ngStyle]="{
@@ -19,4 +23,5 @@
       </div>
     </div>
   </div>
+  <button id="more-stories-button">Show More +</button>
 </section>

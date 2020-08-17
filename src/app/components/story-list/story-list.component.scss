@@ -1,7 +1,6 @@
 #story-list {
   margin: 5px;
   margin-top: 120px;
-  margin-bottom: 30px;
 }
 
 #story-list-header {
@@ -38,12 +37,20 @@
   }
 }
 
+.firstStory {
+  border-top: none;
+}
+
 .listStoryImg {
   flex-grow: 1;
   flex-basis: 0;
   background-color: lightgray;
   background-position: center;
   background-size: cover;
+
+  &:hover {
+    box-shadow: -3px 0px 0px 0px var(--primary-color);
+  }
 }
 
 .listStoryContent {
@@ -73,6 +80,20 @@
     font-style: italic;
     margin-top: 5px;
   }
+}
+
+#more-stories-button {
+  display: block;
+  margin: auto;
+  margin-top: 15px;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: var(--primary-color);
+  cursor: pointer;
 }
 
 @media (min-width: 600px) {
@@ -106,5 +127,25 @@
   #story-list {
     max-width: min(80vw, 1200px);
     margin-top: 150px;
+
+    .listStoryImg {
+      &:hover {
+        box-shadow: -5px 0px 0px 0px var(--primary-color);
+      }
+    }
+
+    .listStoryContent {
+      padding: 10px 15px;
+      .listStoryTitle {
+        font-size: 22px;
+      }
+
+      .listStoryTag {
+      }
+
+      .listStoryByLine {
+        font-size: 14px;
+      }
+    }
   }
 }

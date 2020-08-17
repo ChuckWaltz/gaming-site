@@ -11,6 +11,7 @@ import { StorySubGridComponent } from './components/story-sub-grid/story-sub-gri
 import { StoryListComponent } from './components/story-list/story-list.component';
 
 import { StoryService } from './services/story-service/story.service';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { StoryService } from './services/story-service/story.service';
     StoryGridComponent,
     StorySubGridComponent,
     StoryListComponent,
+    FooterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [StoryService],
