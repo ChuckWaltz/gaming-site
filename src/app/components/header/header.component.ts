@@ -10,6 +10,7 @@ import {
   faTwitter,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -17,7 +18,7 @@ import {
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
 
   faCaretDown = faCaretDown;
   faUser = faUser;
@@ -29,4 +30,8 @@ export class HeaderComponent implements OnInit {
   faYoutube = faYoutube;
 
   ngOnInit(): void {}
+
+  routeTo(route: string): void {
+    this.router.navigate([route]);
+  }
 }

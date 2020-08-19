@@ -12,6 +12,7 @@ import { StoryListComponent } from './components/story-list/story-list.component
 
 import { StoryService } from './services/story-service/story.service';
 import { FooterComponent } from './components/footer/footer.component';
+import { CategoryPageComponent } from './components/pages/category-page/category-page.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FooterComponent } from './components/footer/footer.component';
     StorySubGridComponent,
     StoryListComponent,
     FooterComponent,
+    CategoryPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [StoryService],

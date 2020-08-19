@@ -1,0 +1,25 @@
+#page-wrapper {
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+}
+
+#top-stories-section {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.topStory {
+  background-color: lightgray;
+  flex-grow: 1;
+  height: 300px;
+}
+
+@media (min-width: 1200px) {
+  #top-stories-section {
+    margin-top: 25px;
+    margin-bottom: 50px;
+  }
+}

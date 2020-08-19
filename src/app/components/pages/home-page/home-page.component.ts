@@ -13,9 +13,8 @@ export class HomePageComponent implements OnInit {
 
   @ViewChild(StoryGridComponent) storyGridRef: StoryGridComponent;
 
-  private stories: Entry<any>[] = [];
+  stories: Entry<any>[];
 
-  bottomMarker: HTMLElement;
   canGetMoreStories: boolean = true;
 
   ngOnInit(): void {
@@ -37,15 +36,15 @@ export class HomePageComponent implements OnInit {
       });
   }
 
-  getGridStories(): any[] {
+  getGridStories(): Entry<any>[] {
     return this.stories.slice(0, 8);
   }
 
-  getSubGridStories(): any[] {
+  getSubGridStories(): Entry<any>[] {
     return this.stories.slice(8, 11);
   }
 
-  getListStories(): any[] {
+  getListStories(): Entry<any>[] {
     return this.stories.slice(11);
   }
 }
