@@ -6,6 +6,7 @@
 
 #top-stories-section {
   display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 1200px;
   margin: auto;
@@ -14,12 +15,112 @@
 .topStory {
   background-color: lightgray;
   flex-grow: 1;
-  height: 300px;
+  flex-basis: 0;
+  height: 200px;
+  background-size: cover;
+
+  position: relative;
+
+  cursor: pointer;
+}
+
+.topStoryContentWrapper {
+  width: 100%;
+  height: 100%;
+
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  transition: 0.15s box-shadow ease;
+
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0) 50%
+  );
+
+  &:hover {
+    box-shadow: inset 5px -5px 0px 0px var(--primary-color);
+  }
+}
+
+.topStoryContent {
+  margin-top: 10px;
+}
+
+.topStoryTag {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 2px 6px;
+  font-size: 12px;
+  border-radius: 3px;
+  margin-bottom: 7px;
+  text-transform: uppercase;
+}
+
+.topStoryTitle {
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.topStoryByLine {
+  color: white;
+  font-size: 12px;
+  font-weight: lighter;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+@media (min-width: 600px) {
+  #top-stories-section {
+    flex-direction: row;
+  }
+
+  .topStory {
+    height: 250px;
+  }
+
+  .topStory-corner:after {
+    display: block;
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-right-color: white;
+    border-width: 0 45px 45px 0;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 5;
+  }
+
+  .topStory-corner-bot:after {
+    display: block;
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-left-color: white;
+    border-width: 45px 0 0 45px;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 5;
+  }
 }
 
 @media (min-width: 1200px) {
   #top-stories-section {
     margin-top: 25px;
     margin-bottom: 50px;
+  }
+
+  .topStory {
+    height: 300px;
   }
 }

@@ -8,6 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class StoryListComponent implements OnInit {
   constructor() {}
 
+  @Input() category: string = 'Stories';
+
   @Input() stories: any[];
 
   ngOnInit(): void {}

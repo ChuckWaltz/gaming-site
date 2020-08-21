@@ -1,24 +1,46 @@
 <div id="page-wrapper" *ngIf="stories">
   <div id="top-stories-section">
-    <div class="topStory">
-      <div class="topStoryContent">
-        <div class="topStoryTag">{{ stories[0].fields.tags[0] }}</div>
-        <div class="topStoryTitle">{{ stories[0].fields.title }}</div>
-        <div class="topStoryByLine">
-          By: {{ stories[0].fields.author.fields.name }}
+    <div
+      class="topStory"
+      [ngStyle]="{
+        'background-image':
+          'url(' + stories[0].fields.mainImage.fields.file.url + ')',
+        'background-position': stories[0].fields.imageFocus
+      }"
+      style="margin-right: 2px;"
+    >
+      <div class="topStoryContentWrapper">
+        <div class="topStoryContent">
+          <div class="topStoryTag">{{ stories[0].fields.tags[0] }}</div>
+          <div class="topStoryTitle">{{ stories[0].fields.title }}</div>
+          <div class="topStoryByLine">
+            By: {{ stories[0].fields.author.fields.name }}
+          </div>
         </div>
       </div>
     </div>
-    <div class="topStory">
-      <div class="topStoryContent">
-        <div class="topStoryTag">{{ stories[1].fields.tags[0] }}</div>
-        <div class="topStoryTitle">{{ stories[1].fields.title }}</div>
-        <div class="topStoryByLine">
-          By: {{ stories[1].fields.author.fields.name }}
+    <div
+      class="topStory topStory-corner"
+      [ngStyle]="{
+        'background-image':
+          'url(' + stories[1].fields.mainImage.fields.file.url + ')',
+        'background-position': stories[1].fields.imageFocus
+      }"
+    >
+      <div class="topStoryContentWrapper">
+        <div class="topStoryContent">
+          <div class="topStoryTag">{{ stories[1].fields.tags[0] }}</div>
+          <div class="topStoryTitle">{{ stories[1].fields.title }}</div>
+          <div class="topStoryByLine">
+            By: {{ stories[1].fields.author.fields.name }}
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <app-story-list [stories]="getListStories()"></app-story-list>
+  <app-story-list
+    [category]="category"
+    [stories]="getListStories()"
+  ></app-story-list>
 </div>

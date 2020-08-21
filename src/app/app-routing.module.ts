@@ -10,6 +10,26 @@ const routes: Routes = [
     component: CategoryPageComponent,
     data: { category: 'news' },
   },
+  {
+    path: 'videos',
+    component: CategoryPageComponent,
+    data: { category: 'videos' },
+  },
+  {
+    path: 'reviews',
+    component: CategoryPageComponent,
+    data: { category: 'reviews' },
+  },
+  {
+    path: 'podcasts',
+    component: CategoryPageComponent,
+    data: { category: 'podcasts' },
+  },
+  {
+    path: 'features',
+    component: CategoryPageComponent,
+    data: { category: 'features' },
+  },
 ];
 
 @NgModule({
