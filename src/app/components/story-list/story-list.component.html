@@ -6,6 +6,7 @@
     class="listStory"
     *ngFor="let story of stories; let i = index"
     [ngClass]="{ firstStory: i === 0 }"
+    (click)="storyService.routeToStory(story)"
   >
     <div
       class="listStoryImg"
@@ -15,7 +16,7 @@
       }"
     ></div>
     <div class="listStoryContent">
-      <div class="listStoryTag">{{ story.fields.tags[0] }}</div>
+      <div class="listStoryTag">{{ story.fields.category }}</div>
       <div class="listStoryTitle">{{ story.fields.title }}</div>
       <div class="listStoryByLine">
         By: {{ story.fields.author.fields.name }} |

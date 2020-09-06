@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CategoryPageComponent implements OnInit {
   constructor(
-    private storyService: StoryService,
+    public storyService: StoryService,
     private route: ActivatedRoute
   ) {}
 
@@ -25,7 +25,7 @@ export class CategoryPageComponent implements OnInit {
 
     this.storyService
       .getStories({
-        'fields.tags[in]': this.category,
+        'fields.category': this.category,
         order: '-fields.updatedDateTime',
       })
       .then((stories) => {

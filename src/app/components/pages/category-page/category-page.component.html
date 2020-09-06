@@ -1,4 +1,5 @@
 <div id="page-wrapper" *ngIf="stories">
+  <div id="top-stories-header">LATEST {{ category | uppercase }}</div>
   <div id="top-stories-section">
     <div
       class="topStory"
@@ -7,11 +8,12 @@
           'url(' + stories[0].fields.mainImage.fields.file.url + ')',
         'background-position': stories[0].fields.imageFocus
       }"
-      style="margin-right: 2px;"
+      style="margin-right: 2px"
+      (click)="storyService.routeToStory(stories[0])"
     >
       <div class="topStoryContentWrapper">
         <div class="topStoryContent">
-          <div class="topStoryTag">{{ stories[0].fields.tags[0] }}</div>
+          <div class="topStoryTag">{{ stories[0].fields.category }}</div>
           <div class="topStoryTitle">{{ stories[0].fields.title }}</div>
           <div class="topStoryByLine">
             By: {{ stories[0].fields.author.fields.name }}
@@ -26,10 +28,11 @@
           'url(' + stories[1].fields.mainImage.fields.file.url + ')',
         'background-position': stories[1].fields.imageFocus
       }"
+      (click)="storyService.routeToStory(stories[1])"
     >
       <div class="topStoryContentWrapper">
         <div class="topStoryContent">
-          <div class="topStoryTag">{{ stories[1].fields.tags[0] }}</div>
+          <div class="topStoryTag">{{ stories[1].fields.category }}</div>
           <div class="topStoryTitle">{{ stories[1].fields.title }}</div>
           <div class="topStoryByLine">
             By: {{ stories[1].fields.author.fields.name }}

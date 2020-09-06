@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { createClient, Entry } from 'contentful';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class StoryService {
@@ -9,7 +10,7 @@ export class StoryService {
     accessToken: environment.contentful.accessToken,
   });
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   getStories(query?: object): Promise<Entry<any>[]> {
     return this.cdaClient
@@ -22,5 +23,15 @@ export class StoryService {
         )
       )
       .then((res) => res.items);
+  }
+
+  getStory(id: string): Promise<Entry<any>> {
+    return this.cdaClient.getEntry(id).then((res) => res);
+  }
+
+  routeToStory(story: Entry<any>) {
+    this.router.navigate([
+      `${story.fields.category.toLowerCase()}/${story.sys.id}`,
+    ]);
   }
 }

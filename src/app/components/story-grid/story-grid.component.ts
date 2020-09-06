@@ -3,6 +3,7 @@ import { DOCUMENT } from '@angular/common';
 
 import { ScreenSize } from '../../enums/screen-size.enum';
 import { getScreenSize } from '../../utils/common-utils';
+import { StoryService } from 'src/app/services/story-service/story.service';
 
 @Component({
   selector: 'app-story-grid',
@@ -10,7 +11,10 @@ import { getScreenSize } from '../../utils/common-utils';
   styleUrls: ['./story-grid.component.scss'],
 })
 export class StoryGridComponent implements OnInit {
-  constructor(@Inject(DOCUMENT) private _doc: Document) {}
+  constructor(
+    @Inject(DOCUMENT) private _doc: Document,
+    public storyService: StoryService
+  ) {}
 
   @Input() stories: any[];
 

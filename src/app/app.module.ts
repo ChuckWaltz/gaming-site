@@ -13,6 +13,7 @@ import { StoryListComponent } from './components/story-list/story-list.component
 import { StoryService } from './services/story-service/story.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { CategoryPageComponent } from './components/pages/category-page/category-page.component';
+import { NewsPageComponent } from './components/pages/news-page/news-page.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { CategoryPageComponent } from './components/pages/category-page/category
     StoryListComponent,
     FooterComponent,
     CategoryPageComponent,
+    NewsPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [StoryService],

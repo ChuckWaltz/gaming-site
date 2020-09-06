@@ -6,10 +6,11 @@
       'background-image': 'url(' + story.fields.mainImage.fields.file.url + ')'
     }"
     [ngClass]="{ 'sgi-corner': i === stories.length - 1 }"
+    (click)="storyService.routeToStory(story)"
   >
     <div class="sgiContentWrapper">
       <div class="sgiContent">
-        <div class="sgiTag">{{ story.fields.tags[0] }}</div>
+        <div class="sgiTag">{{ story.fields.category }}</div>
         <div class="sgiTitle">{{ story.fields.title }}</div>
         <div class="sgiByLine">By: {{ story.fields.author.fields.name }}</div>
       </div>
