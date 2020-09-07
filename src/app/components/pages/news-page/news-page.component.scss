@@ -3,11 +3,50 @@
 }
 
 #top-section {
+  margin-top: 10px;
   padding: 10px;
+
+  #story-tags-container {
+    .storyTag {
+      color: white;
+      background-color: var(--primary-color);
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 14px;
+    }
+  }
+
+  .storyTitle {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 10px;
+    line-height: 38px;
+  }
+
+  .storySubText {
+    font-size: 22px;
+    color: gray;
+    font-style: italic;
+    font-weight: lighter;
+    margin-top: 10px;
+    line-height: 28px;
+  }
+
+  .storyByLine {
+    margin-top: 10px;
+    font-size: 14px;
+
+    .storyAuthor {
+      color: var(--primary-color);
+      font-style: italic;
+    }
+  }
 }
 
 #top-img {
-  max-width: 100%;
+  width: 100%;
+  margin-top: 10px;
 }
 
 #story-body {

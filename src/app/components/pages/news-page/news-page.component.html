@@ -6,11 +6,12 @@
       </div>
     </div>
 
-    <h1>{{ story.fields.title }}</h1>
-    <h3>{{ story.fields.subText }}</h3>
+    <h1 class="storyTitle">{{ story.fields.title }}</h1>
+    <h3 class="storySubText">{{ story.fields.subText }}</h3>
     <div class="storyByLine">
       By
-      <span class="storyAuthor">{{ story.fields.author.fields.name }}</span> |
+      <span class="storyAuthor">{{ story.fields.author.fields.name }}</span>
+      &nbsp;|
       {{ story.sys.updatedAt | date: "MMMM dd, yyyy, h:mm a" }}
     </div>
   </section>
