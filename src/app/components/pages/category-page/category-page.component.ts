@@ -26,7 +26,7 @@ export class CategoryPageComponent implements OnInit {
     this.storyService
       .getStories({
         'fields.category': this.category,
-        order: '-fields.updatedDateTime',
+        order: '-sys.updatedAt',
       })
       .then((stories) => {
         this.stories = [

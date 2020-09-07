@@ -1,6 +1,6 @@
 <div id="page-wrapper" *ngIf="stories">
   <div id="top-stories-header">LATEST {{ category | uppercase }}</div>
-  <div id="top-stories-section">
+  <section id="top-stories-section">
     <div
       class="topStory"
       [ngStyle]="{
@@ -40,7 +40,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <app-story-list
     [category]="category"

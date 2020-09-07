@@ -19,7 +19,7 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.storyService
-      .getStories({ order: '-fields.updatedDateTime' })
+      .getStories({ order: '-sys.updatedAt' })
       .then((stories) => {
         this.stories = [
           ...stories,

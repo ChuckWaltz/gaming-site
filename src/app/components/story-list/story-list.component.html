@@ -20,7 +20,7 @@
       <div class="listStoryTitle">{{ story.fields.title }}</div>
       <div class="listStoryByLine">
         By: {{ story.fields.author.fields.name }} |
-        {{ story.fields.updatedDateTime | date: "MMMM d" }}
+        {{ story.sys.updatedAt | date: "MMMM d" }}
       </div>
     </div>
   </div>
