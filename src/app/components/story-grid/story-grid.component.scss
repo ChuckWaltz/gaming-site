@@ -122,6 +122,7 @@
 
       .sgiTitle {
         color: black;
+        text-transform: unset;
         font-size: 18px;
       }
 
@@ -138,6 +139,12 @@
       &:hover {
         .sgiTitle {
           color: var(--primary-color);
+        }
+      }
+
+      .sgi-large {
+        .sgiTitle {
+          text-transform: uppercase;
         }
       }
     }
@@ -189,7 +196,7 @@
     height: 65vw;
     max-height: 1075px;
     min-height: 985px;
-    max-width: 1800px;
+    max-width: 1600px;
     .sgi {
       flex-basis: calc(25% - 2px * 2);
     }
