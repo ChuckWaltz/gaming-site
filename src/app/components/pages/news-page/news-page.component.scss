@@ -4,7 +4,7 @@
 
 #top-section {
   margin-top: 10px;
-  padding: 10px;
+  padding: 15px;
 
   #story-tags-container {
     .storyTag {
@@ -21,7 +21,6 @@
     font-size: 32px;
     font-weight: bold;
     margin-top: 10px;
-    line-height: 38px;
   }
 
   .storySubText {
@@ -30,7 +29,6 @@
     font-style: italic;
     font-weight: lighter;
     margin-top: 10px;
-    line-height: 28px;
   }
 
   .storyByLine {
@@ -50,5 +48,13 @@
 }
 
 #story-body {
-  padding: 10px;
+  padding: 15px;
+}
+
+@media (min-width: 728px) {
+  #top-section {
+    .storyTitle {
+      font-size: 48px;
+    }
+  }
 }
