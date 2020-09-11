@@ -12,7 +12,7 @@ import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 export class NewsPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
-    private storyService: StoryService
+    public storyService: StoryService
   ) {
     route.params.subscribe((val) => {
       window.scrollTo(0, 0);

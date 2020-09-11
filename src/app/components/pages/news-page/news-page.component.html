@@ -23,7 +23,7 @@
       Next Up In <a [routerLink]="['/news']">News</a>
     </div>
     <div class="nextUpItem" *ngFor="let nextUpStory of nextUpStories">
-      <a [routerLink]="['/news/', nextUpStory.sys.id]">{{
+      <a (click)="storyService.routeToStory(nextUpStory)">{{
         nextUpStory.fields.title
       }}</a>
     </div>
