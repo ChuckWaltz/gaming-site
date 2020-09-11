@@ -30,8 +30,12 @@ export class StoryService {
   }
 
   routeToStory(story: Entry<any>) {
+    let title = story.fields.title
+      .replaceAll(' ', '-')
+      .replace(/[^A-Za-z0-9-]/g, '')
+      .toLowerCase();
     this.router.navigate([
-      `${story.fields.category.toLowerCase()}/${story.sys.id}`,
+      `${story.fields.category.toLowerCase()}/${story.sys.id}/${title}`,
     ]);
   }
 }

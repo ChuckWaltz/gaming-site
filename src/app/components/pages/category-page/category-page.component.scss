@@ -23,7 +23,7 @@
 }
 
 .topStory {
-  background-color: lightgray;
+  background-color: var(--placeholder-color);
   flex-grow: 1;
   flex-basis: 0;
   height: 200px;
