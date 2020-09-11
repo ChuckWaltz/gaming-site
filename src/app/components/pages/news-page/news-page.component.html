@@ -1,6 +1,7 @@
 <div id="page-wrapper" *ngIf="story">
   <section id="top-section">
     <div id="story-tags-container">
+      <div class="storyTag">{{ story.fields.category }}</div>
       <div class="storyTag" *ngFor="let tag of story.fields.tags">
         {{ tag }}
       </div>
@@ -17,4 +18,14 @@
   </section>
   <img id="top-img" [src]="story.fields.mainImage.fields.file.url" />
   <section id="story-body" [innerHTML]="storyBodyContent"></section>
+  <section id="next-up-section">
+    <div id="next-up-section-header">
+      Next Up In <a [routerLink]="['/news']">News</a>
+    </div>
+    <div class="nextUpItem" *ngFor="let nextUpStory of nextUpStories">
+      <a [routerLink]="['/news/', nextUpStory.sys.id]">{{
+        nextUpStory.fields.title
+      }}</a>
+    </div>
+  </section>
 </div>

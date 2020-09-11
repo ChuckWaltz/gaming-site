@@ -13,19 +13,36 @@ export class NewsPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private storyService: StoryService
-  ) {}
+  ) {
+    route.params.subscribe((val) => {
+      window.scrollTo(0, 0);
+
+      let storyId: any = this.route.snapshot.params.id;
+
+      this.storyService.getStory(storyId).then((story) => {
+        this.story = story;
+        this.storyBodyContent = documentToHtmlString(story.fields.body);
+        console.log(story);
+        console.log(this.storyBodyContent);
+      });
+
+      this.storyService
+        .getStories({
+          'fields.category': 'News',
+          order: '-sys.updatedAt',
+        })
+        .then((stories) => {
+          this.nextUpStories = stories.filter((s) => {
+            return s.sys.id !== storyId;
+          });
+        });
+    });
+  }
 
   story: Entry<any>;
   storyBodyContent: any;
 
-  ngOnInit(): void {
-    let storyId: any = this.route.snapshot.params.id;
+  nextUpStories: Entry<any>[];
 
-    this.storyService.getStory(storyId).then((story) => {
-      this.story = story;
-      this.storyBodyContent = documentToHtmlString(story.fields.body);
-      console.log(story);
-      console.log(this.storyBodyContent);
-    });
-  }
+  ngOnInit(): void {}
 }
