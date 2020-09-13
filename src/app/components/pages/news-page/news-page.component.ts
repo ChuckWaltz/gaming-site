@@ -20,8 +20,11 @@ export class NewsPageComponent implements OnInit {
         [MARKS.CODE]: (text) => `<code>${text}</code>`,
       },
       renderNode: {
-        [BLOCKS.EMBEDDED_ASSET]: (node, next) =>
-          `<img src='${node.data.target.fields.file.url}'/>`,
+        [BLOCKS.EMBEDDED_ASSET]: (node, next) => {
+          if (node.data.target.fields.file.contentType.startsWith('image'))
+            return `<img src='${node.data.target.fields.file.url}'/>`;
+          else return 'Unsupported Asset Type';
+        },
         [BLOCKS.EMBEDDED_ENTRY]: (node, next) =>
           `<a class='embeddedEntry' href='${window.location.origin}/news/${
             node.data.target.sys.id
@@ -42,6 +45,8 @@ export class NewsPageComponent implements OnInit {
           `<div class='embeddedEntryInline'>
             <div class='embeddedEntryInlineTitle'>${node.data.target.fields.title}</div>
           </div>`,
+        [BLOCKS.QUOTE]: (node, next) =>
+          `<div class="quote">${next(node.content)}</div>`,
       },
     };
 

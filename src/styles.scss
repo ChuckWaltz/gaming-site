@@ -50,6 +50,13 @@ code {
 
 img {
   max-width: 100%;
+  margin: 10px 0;
+}
+
+.quote {
+  font-style: italic;
+  color: gray;
+  line-height: 26px;
 }
 
 .embeddedEntry {
@@ -66,6 +73,7 @@ img {
   img {
     //display: none;
     max-width: calc(100vw / 3);
+    margin: unset;
     margin-right: 10px;
   }
 
@@ -91,8 +99,9 @@ img {
   }
 
   .embeddedEntry {
-    display: inline-flex;
+    display: flex;
     padding-bottom: 10px;
+    max-width: 800px;
 
     img {
       display: block;
