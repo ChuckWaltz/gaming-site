@@ -23,11 +23,17 @@ export class NewsPageComponent implements OnInit {
         [BLOCKS.EMBEDDED_ASSET]: (node, next) =>
           `<img src='${node.data.target.fields.file.url}'/>`,
         [BLOCKS.EMBEDDED_ENTRY]: (node, next) =>
-          `<a class='embeddedEntry' href='${window.location.origin}/news/${node.data.target.sys.id}'>
+          `<a class='embeddedEntry' href='${window.location.origin}/news/${
+            node.data.target.sys.id
+          }/${this.storyService.getStoryTitleForUrl(node.data.target)}'>
             <img src='${node.data.target.fields.mainImage.fields.file.url}'/>
             <div class='embeddedEntryContent'>
-              <div class='embeddedEntryTitle'>${node.data.target.fields.title}</div>
-              <div class='embeddedEntrySubText'>${node.data.target.fields.subText}</div>
+              <div class='embeddedEntryTitle'>${
+                node.data.target.fields.title
+              }</div>
+              <div class='embeddedEntrySubText'>${
+                node.data.target.fields.subText
+              }</div>
             </div>
           </a>`,
         [INLINES.EMBEDDED_ENTRY]: (node, next) =>

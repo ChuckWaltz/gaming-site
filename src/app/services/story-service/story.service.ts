@@ -30,12 +30,17 @@ export class StoryService {
   }
 
   routeToStory(story: Entry<any>) {
-    let title = story.fields.title
+    this.router.navigate([
+      `${story.fields.category.toLowerCase()}/${
+        story.sys.id
+      }/${this.getStoryTitleForUrl(story)}`,
+    ]);
+  }
+
+  getStoryTitleForUrl(story: Entry<any>) {
+    return story.fields.title
       .replaceAll(' ', '-')
       .replace(/[^A-Za-z0-9-]/g, '')
       .toLowerCase();
-    this.router.navigate([
-      `${story.fields.category.toLowerCase()}/${story.sys.id}/${title}`,
-    ]);
   }
 }
