@@ -26,7 +26,9 @@ export class NewsPageComponent implements OnInit {
           `<a class='embeddedEntry' href='${window.location.origin}/news/${
             node.data.target.sys.id
           }/${this.storyService.getStoryTitleForUrl(node.data.target)}'>
-            <img src='${node.data.target.fields.mainImage.fields.file.url}'/>
+            <div class='embeddedEntryImg'>
+              <img src='${node.data.target.fields.mainImage.fields.file.url}'/>
+            </div>
             <div class='embeddedEntryContent'>
               <div class='embeddedEntryTitle'>${
                 node.data.target.fields.title

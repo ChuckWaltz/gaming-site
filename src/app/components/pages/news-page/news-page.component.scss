@@ -94,6 +94,6 @@
 
 @media (min-width: 1200px) {
   #page-wrapper {
-    max-width: 1250px;
+    max-width: min(1250px, 70vw);
   }
 }
