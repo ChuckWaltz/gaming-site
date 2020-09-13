@@ -13,7 +13,7 @@ import { MARKS, BLOCKS, INLINES } from '@contentful/rich-text-types';
 export class NewsPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
-    private storyService: StoryService
+    public storyService: StoryService
   ) {
     const richTextOptions = {
       renderMark: {

@@ -73,6 +73,10 @@
   .nextUpItem {
     font-size: 18px;
     margin-top: 15px;
+
+    a {
+      cursor: pointer;
+    }
   }
 }
 
@@ -85,5 +89,11 @@
     .storyTitle {
       font-size: 48px;
     }
+  }
+}
+
+@media (min-width: 1200px) {
+  #page-wrapper {
+    max-width: 1250px;
   }
 }

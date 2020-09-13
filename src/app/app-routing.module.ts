@@ -12,7 +12,7 @@ const routes: Routes = [
     data: { category: 'news' },
   },
   {
-    path: 'news/:id',
+    path: 'news/:id/:title',
     component: NewsPageComponent,
   },
   {
