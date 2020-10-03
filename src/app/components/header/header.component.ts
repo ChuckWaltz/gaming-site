@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   faCaretDown,
   faUser,
@@ -10,7 +10,7 @@ import {
   faTwitter,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -29,7 +29,21 @@ export class HeaderComponent implements OnInit {
   faTwitter = faTwitter;
   faYoutube = faYoutube;
 
-  ngOnInit(): void {}
+  category: string;
+
+  ngOnInit(): void {
+    this.router.events.subscribe((e) => {
+      if (e instanceof NavigationEnd) {
+        this.updateActiveCategory();
+      }
+    });
+  }
+
+  updateActiveCategory() {
+    let url: string = this.router.url.substring(1);
+    let slashIdx = url.indexOf('/');
+    this.category = slashIdx === -1 ? url : url.substring(0, slashIdx);
+  }
 
   routeTo(route: string): void {
     this.router.navigate([route]);

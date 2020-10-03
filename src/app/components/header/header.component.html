@@ -4,19 +4,39 @@
       <img src="../../assets/lime_logo.png" (click)="routeTo('')" />
     </div>
     <nav>
-      <div class="navItem navItemList" (click)="routeTo('news')">
+      <div
+        class="navItem navItemList"
+        [ngClass]="{ navItemActive: category === 'news' }"
+        (click)="routeTo('news')"
+      >
         NEWS<!-- <fa-icon [icon]="faCaretDown"></fa-icon> -->
       </div>
-      <div class="navItem navItemList" (click)="routeTo('videos')">
+      <div
+        class="navItem navItemList"
+        [ngClass]="{ navItemActive: category === 'videos' }"
+        (click)="routeTo('videos')"
+      >
         VIDEOS<!-- <fa-icon [icon]="faCaretDown"></fa-icon> -->
       </div>
-      <div class="navItem navItemList show-lg" (click)="routeTo('reviews')">
+      <div
+        class="navItem navItemList show-lg"
+        [ngClass]="{ navItemActive: category === 'reviews' }"
+        (click)="routeTo('reviews')"
+      >
         REVIEWS<!-- <fa-icon [icon]="faCaretDown"></fa-icon> -->
       </div>
-      <div class="navItem navItemList show-md" (click)="routeTo('podcasts')">
+      <div
+        class="navItem navItemList show-md"
+        [ngClass]="{ navItemActive: category === 'podcasts' }"
+        (click)="routeTo('podcasts')"
+      >
         PODCASTS<!-- <fa-icon [icon]="faCaretDown"></fa-icon> -->
       </div>
-      <div class="navItem navItemList show-xl" (click)="routeTo('features')">
+      <div
+        class="navItem navItemList show-xl"
+        [ngClass]="{ navItemActive: category === 'features' }"
+        (click)="routeTo('features')"
+      >
         FEATURES
       </div>
       <div class="navItem navItemList">

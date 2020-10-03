@@ -57,6 +57,10 @@ nav {
     }
   }
 
+  .navItemActive {
+    box-shadow: inset 0px -5px 0px 0px white;
+  }
+
   .navItemList {
     &:hover {
       background-color: var(--primary-color);
