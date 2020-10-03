@@ -13,6 +13,8 @@ export class StoryListComponent implements OnInit {
 
   @Input() stories: any[];
 
+  @Input() storyLimitReached: boolean = false;
+
   @Output() getStories: EventEmitter<any> = new EventEmitter();
 
   ngOnInit(): void {}

@@ -94,6 +94,11 @@
   text-transform: uppercase;
   background-color: var(--primary-color);
   cursor: pointer;
+
+  &:disabled {
+    background-color: grey;
+    opacity: 0.5;
+  }
 }
 
 @media (min-width: 600px) {

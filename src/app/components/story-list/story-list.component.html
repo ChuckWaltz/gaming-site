@@ -27,7 +27,11 @@
       </div>
     </div>
   </div>
-  <button id="more-stories-button" (click)="handleShowMore()">
+  <button
+    id="more-stories-button"
+    (click)="handleShowMore()"
+    [disabled]="storyLimitReached"
+  >
     Show More +
   </button>
 </section>

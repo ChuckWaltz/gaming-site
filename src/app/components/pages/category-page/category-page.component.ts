@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Entry } from 'contentful';
 import { StoryService } from 'src/app/services/story-service/story.service';
 import { ActivatedRoute } from '@angular/router';
@@ -11,7 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 export class CategoryPageComponent implements OnInit {
   constructor(
     public storyService: StoryService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private cdr: ChangeDetectorRef
   ) {}
 
   category: string;
@@ -20,6 +21,8 @@ export class CategoryPageComponent implements OnInit {
 
   pageSize: number = 15;
   currentPage: number = 1;
+
+  storyLimitReached: boolean = true;
 
   ngOnInit(): void {
     this.getStories(true);
@@ -42,6 +45,7 @@ export class CategoryPageComponent implements OnInit {
         skip: this.pageSize * (this.currentPage - 1),
       })
       .then((stories) => {
+        this.storyLimitReached = stories.length < this.pageSize;
         this.stories = this.stories.concat([...stories]);
         console.log(this.stories);
       });

@@ -47,6 +47,7 @@
   <app-story-list
     [category]="category"
     [stories]="getListStories()"
+    [storyLimitReached]="storyLimitReached"
     (getStories)="getStories()"
   ></app-story-list>
 </div>
