@@ -2,6 +2,7 @@
   <div id="top-stories-header">LATEST {{ category | uppercase }}</div>
   <section id="top-stories-section">
     <div
+      *ngIf="stories[0]"
       class="topStory"
       [ngStyle]="{
         'background-image':
@@ -22,6 +23,7 @@
       </div>
     </div>
     <div
+      *ngIf="stories[1]"
       class="topStory topStory-corner"
       [ngStyle]="{
         'background-image':
@@ -45,5 +47,6 @@
   <app-story-list
     [category]="category"
     [stories]="getListStories()"
+    (getStories)="getStories()"
   ></app-story-list>
 </div>

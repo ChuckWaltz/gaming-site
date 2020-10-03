@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { StoryService } from 'src/app/services/story-service/story.service';
 
 @Component({
@@ -9,9 +9,15 @@ import { StoryService } from 'src/app/services/story-service/story.service';
 export class StoryListComponent implements OnInit {
   constructor(public storyService: StoryService) {}
 
-  @Input() category: string;
+  @Input() category: string = 'Stories';
 
   @Input() stories: any[];
 
+  @Output() getStories: EventEmitter<any> = new EventEmitter();
+
   ngOnInit(): void {}
+
+  handleShowMore(): void {
+    this.getStories.emit();
+  }
 }

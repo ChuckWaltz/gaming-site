@@ -21,13 +21,7 @@ export class HomePageComponent implements OnInit {
     this.storyService
       .getStories({ order: '-sys.updatedAt' })
       .then((stories) => {
-        this.stories = [
-          ...stories,
-          ...stories,
-          ...stories,
-          ...stories,
-          ...stories,
-        ];
+        this.stories = [...stories];
         console.log(this.stories);
 
         setTimeout(() => {

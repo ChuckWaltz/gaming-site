@@ -75,7 +75,7 @@
         [(ngModel)]="searchValue"
       />
       <div id="search-bar-icon">
-        <fa-icon [icon]="faSearch"></fa-icon>
+        <fa-icon [icon]="faSearch" (click)="runSearch()"></fa-icon>
       </div>
     </div>
   </div>
