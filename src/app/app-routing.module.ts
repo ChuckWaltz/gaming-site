@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomePageComponent } from './components/pages/home-page/home-page.component';
 import { CategoryPageComponent } from './components/pages/category-page/category-page.component';
 import { NewsPageComponent } from './components/pages/news-page/news-page.component';
+import { VideoPageComponent } from './components/pages/video-page/video-page.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -18,6 +19,14 @@ const routes: Routes = [
   {
     path: 'news/:id/:title',
     component: NewsPageComponent,
+  },
+  {
+    path: 'videos/:id',
+    component: VideoPageComponent,
+  },
+  {
+    path: 'videos/:id/:title',
+    component: VideoPageComponent,
   },
   {
     path: 'videos',

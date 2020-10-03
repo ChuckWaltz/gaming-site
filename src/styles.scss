@@ -20,6 +20,10 @@ body {
   color: rgb(25, 25, 25);
 }
 
+a {
+  color: var(--primary-color);
+}
+
 .show-md {
   display: none !important;
 }
@@ -68,6 +72,7 @@ img {
   padding: 10px;
   padding-bottom: 6px;
   text-decoration: none;
+  margin: 10px 0px;
   cursor: pointer;
 
   img {
@@ -90,7 +95,29 @@ img {
   }
 }
 
+p {
+  display: inline-block;
+}
+
 .embeddedEntryInline {
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: rgb(235, 235, 235);
+  border-radius: 5px;
+  border: 1px solid var(--primary-color);
+  margin-left: 5px;
+
+  .embeddedEntryInlineTitle {
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+.embeddedEntry:hover,
+.embeddedEntryInline:hover {
+  border-color: var(--secondary-color);
 }
 
 @media (min-width: 600px) {

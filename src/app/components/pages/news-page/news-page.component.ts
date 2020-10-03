@@ -42,9 +42,15 @@ export class NewsPageComponent implements OnInit {
             </div>
           </a>`,
         [INLINES.EMBEDDED_ENTRY]: (node, next) =>
-          `<div class='embeddedEntryInline'>
-            <div class='embeddedEntryInlineTitle'>${node.data.target.fields.title}</div>
-          </div>`,
+          `<a href='${window.location.origin}/news/${
+            node.data.target.sys.id
+          }/${this.storyService.getStoryTitleForUrl(
+            node.data.target
+          )}'><div class='embeddedEntryInline'>
+            <div class='embeddedEntryInlineTitle'>${
+              node.data.target.fields.title
+            }</div>
+          </div></a>`,
         [BLOCKS.QUOTE]: (node, next) =>
           `<div class="quote">${next(node.content)}</div>`,
       },

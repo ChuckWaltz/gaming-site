@@ -14,6 +14,7 @@ import { StoryService } from './services/story-service/story.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { CategoryPageComponent } from './components/pages/category-page/category-page.component';
 import { NewsPageComponent } from './components/pages/news-page/news-page.component';
+import { VideoPageComponent } from './components/pages/video-page/video-page.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { NewsPageComponent } from './components/pages/news-page/news-page.compon
     FooterComponent,
     CategoryPageComponent,
     NewsPageComponent,
+    VideoPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [StoryService],

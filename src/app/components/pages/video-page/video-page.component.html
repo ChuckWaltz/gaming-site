@@ -1,0 +1,44 @@
+<div id="page-wrapper" *ngIf="story">
+  <section id="video-section">
+    <div class="embed-container">
+      <iframe
+        [src]="
+          sanitizer.bypassSecurityTrustResourceUrl(
+            story.fields.video.fields.url
+          )
+        "
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </section>
+
+  <section id="bottom-section">
+    <div id="story-tags-container">
+      <div class="storyTag">{{ story.fields.category }}</div>
+      <div class="storyTag" *ngFor="let tag of story.fields.tags">
+        {{ tag }}
+      </div>
+    </div>
+
+    <h1 class="storyTitle">{{ story.fields.title }}</h1>
+    <h3 class="storySubText">{{ story.fields.subText }}</h3>
+    <div class="storyByLine">
+      By
+      <span class="storyAuthor">{{ story.fields.author.fields.name }}</span>
+      &nbsp;|
+      {{ story.sys.updatedAt | date: "MMMM dd, yyyy, h:mm a" }}
+    </div>
+  </section>
+
+  <section id="next-up-section">
+    <div id="next-up-section-header">
+      Next Up In <a [routerLink]="['/videos']">Videos</a>
+    </div>
+    <div class="nextUpItem" *ngFor="let nextUpStory of nextUpStories">
+      <a (click)="storyService.routeToStory(nextUpStory)">{{
+        nextUpStory.fields.title
+      }}</a>
+    </div>
+  </section>
+</div>
