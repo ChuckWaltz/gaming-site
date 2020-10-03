@@ -4,6 +4,8 @@ import { HomePageComponent } from './components/pages/home-page/home-page.compon
 import { CategoryPageComponent } from './components/pages/category-page/category-page.component';
 import { NewsPageComponent } from './components/pages/news-page/news-page.component';
 import { VideoPageComponent } from './components/pages/video-page/video-page.component';
+import { ReviewPageComponent } from './components/pages/review-page/review-page.component';
+import { FeaturePageComponent } from './components/pages/feature-page/feature-page.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -34,6 +36,14 @@ const routes: Routes = [
     data: { category: 'videos' },
   },
   {
+    path: 'reviews/:id',
+    component: ReviewPageComponent,
+  },
+  {
+    path: 'reviews/:id/:title',
+    component: ReviewPageComponent,
+  },
+  {
     path: 'reviews',
     component: CategoryPageComponent,
     data: { category: 'reviews' },
@@ -42,6 +52,14 @@ const routes: Routes = [
     path: 'podcasts',
     component: CategoryPageComponent,
     data: { category: 'podcasts' },
+  },
+  {
+    path: 'features/:id',
+    component: FeaturePageComponent,
+  },
+  {
+    path: 'features/:id/:title',
+    component: FeaturePageComponent,
   },
   {
     path: 'features',

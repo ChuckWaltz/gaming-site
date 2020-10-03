@@ -1,0 +1,31 @@
+<div id="page-wrapper" *ngIf="story">
+  <section id="top-section">
+    <div id="story-tags-container">
+      <div class="storyTag">{{ story.fields.category }}</div>
+      <div class="storyTag" *ngFor="let tag of story.fields.tags">
+        {{ tag }}
+      </div>
+    </div>
+
+    <h1 class="storyTitle">{{ story.fields.title }}</h1>
+    <h3 class="storySubText">{{ story.fields.subText }}</h3>
+    <div class="storyByLine">
+      By
+      <span class="storyAuthor">{{ story.fields.author.fields.name }}</span>
+      &nbsp;|
+      {{ story.sys.updatedAt | date: "MMMM dd, yyyy, h:mm a" }}
+    </div>
+  </section>
+  <img id="top-img" [src]="story.fields.mainImage.fields.file.url" />
+  <section id="story-body" [innerHTML]="storyBodyContent"></section>
+  <section id="next-up-section">
+    <div id="next-up-section-header">
+      Next Up In <a [routerLink]="['/reviews']">Reviews</a>
+    </div>
+    <div class="nextUpItem" *ngFor="let nextUpStory of nextUpStories">
+      <a (click)="storyService.routeToStory(nextUpStory)">{{
+        nextUpStory.fields.title
+      }}</a>
+    </div>
+  </section>
+</div>

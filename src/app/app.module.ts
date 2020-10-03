@@ -15,6 +15,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CategoryPageComponent } from './components/pages/category-page/category-page.component';
 import { NewsPageComponent } from './components/pages/news-page/news-page.component';
 import { VideoPageComponent } from './components/pages/video-page/video-page.component';
+import { ReviewPageComponent } from './components/pages/review-page/review-page.component';
+import { FeaturePageComponent } from './components/pages/feature-page/feature-page.component';
+import { PodcastPageComponent } from './components/pages/podcast-page/podcast-page.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { VideoPageComponent } from './components/pages/video-page/video-page.com
     CategoryPageComponent,
     NewsPageComponent,
     VideoPageComponent,
+    ReviewPageComponent,
+    FeaturePageComponent,
+    PodcastPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [StoryService],
