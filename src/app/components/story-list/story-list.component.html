@@ -1,6 +1,9 @@
 <section id="story-list">
   <div id="story-list-header">
-    <div id="story-list-header-text">MORE {{ category | uppercase }}</div>
+    <div id="story-list-header-text">
+      <span *ngIf="category !== 'Search'">MORE {{ category | uppercase }}</span>
+      <span *ngIf="category === 'Search'">SEARCH RESULTS</span>
+    </div>
   </div>
   <div
     class="listStory"

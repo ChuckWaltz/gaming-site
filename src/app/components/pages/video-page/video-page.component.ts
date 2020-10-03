@@ -16,6 +16,9 @@ export class VideoPageComponent implements OnInit {
     public sanitizer: DomSanitizer
   ) {
     route.params.subscribe((val) => {
+      this.story = null;
+      this.nextUpStories = null;
+
       window.scrollTo(0, 0);
 
       let storyId: any = this.route.snapshot.params.id;

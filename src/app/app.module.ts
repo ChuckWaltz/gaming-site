@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,7 @@ import { VideoPageComponent } from './components/pages/video-page/video-page.com
 import { ReviewPageComponent } from './components/pages/review-page/review-page.component';
 import { FeaturePageComponent } from './components/pages/feature-page/feature-page.component';
 import { PodcastPageComponent } from './components/pages/podcast-page/podcast-page.component';
+import { SearchPageComponent } from './components/pages/search-page/search-page.component';
 
 @NgModule({
   declarations: [
@@ -34,8 +36,9 @@ import { PodcastPageComponent } from './components/pages/podcast-page/podcast-pa
     ReviewPageComponent,
     FeaturePageComponent,
     PodcastPageComponent,
+    SearchPageComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule],
   providers: [StoryService],
   bootstrap: [AppComponent],
 })

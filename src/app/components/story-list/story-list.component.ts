@@ -9,7 +9,7 @@ import { StoryService } from 'src/app/services/story-service/story.service';
 export class StoryListComponent implements OnInit {
   constructor(public storyService: StoryService) {}
 
-  @Input() category: string = 'Stories';
+  @Input() category: string;
 
   @Input() stories: any[];
 

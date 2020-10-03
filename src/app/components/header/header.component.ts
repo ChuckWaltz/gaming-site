@@ -31,10 +31,19 @@ export class HeaderComponent implements OnInit {
 
   category: string;
 
+  searchBarActive: boolean = false;
+  searchValue: string;
+
   ngOnInit(): void {
     this.router.events.subscribe((e) => {
       if (e instanceof NavigationEnd) {
         this.updateActiveCategory();
+        if (this.category === 'search') {
+          this.searchBarActive = true;
+        } else {
+          this.searchBarActive = false;
+          this.searchValue = '';
+        }
       }
     });
   }
@@ -43,6 +52,20 @@ export class HeaderComponent implements OnInit {
     let url: string = this.router.url.substring(1);
     let slashIdx = url.indexOf('/');
     this.category = slashIdx === -1 ? url : url.substring(0, slashIdx);
+    if (this.category.includes('?'))
+      this.category = this.category.substring(0, this.category.indexOf('?'));
+  }
+
+  toggleSearchBar() {
+    document.getElementById('search-input').focus();
+    if (this.category === 'search') return;
+    this.searchBarActive = !this.searchBarActive;
+  }
+
+  runSearch() {
+    this.router.navigate(['/search'], {
+      queryParams: { search: this.searchValue },
+    });
   }
 
   routeTo(route: string): void {

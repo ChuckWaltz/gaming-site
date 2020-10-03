@@ -6,6 +6,7 @@ import { NewsPageComponent } from './components/pages/news-page/news-page.compon
 import { VideoPageComponent } from './components/pages/video-page/video-page.component';
 import { ReviewPageComponent } from './components/pages/review-page/review-page.component';
 import { FeaturePageComponent } from './components/pages/feature-page/feature-page.component';
+import { SearchPageComponent } from './components/pages/search-page/search-page.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -65,6 +66,10 @@ const routes: Routes = [
     path: 'features',
     component: CategoryPageComponent,
     data: { category: 'features' },
+  },
+  {
+    path: 'search',
+    component: SearchPageComponent,
   },
 ];
 

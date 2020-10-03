@@ -57,6 +57,9 @@ export class NewsPageComponent implements OnInit {
     };
 
     route.params.subscribe((val) => {
+      this.story = null;
+      this.nextUpStories = null;
+
       window.scrollTo(0, 0);
 
       let storyId: any = this.route.snapshot.params.id;
