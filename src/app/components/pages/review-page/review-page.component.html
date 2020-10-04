@@ -16,8 +16,32 @@
       {{ story.sys.updatedAt | date: "MMMM dd, yyyy, h:mm a" }}
     </div>
   </section>
-  <img id="top-img" [src]="story.fields.mainImage.fields.file.url" />
+  <section id="top-img-section">
+    <img id="top-img" [src]="story.fields.mainImage.fields.file.url" />
+  </section>
+
   <section id="story-body" [innerHTML]="storyBodyContent"></section>
+  <section id="score-section">
+    <div id="score-section-inner">
+      <div id="score-section-content">
+        <div id="review-pros">
+          <div class="reviewPro" *ngFor="let pro of story.fields.reviewPros">
+            <fa-icon [icon]="faPlusCircle"></fa-icon>{{ pro }}
+          </div>
+        </div>
+        <div id="review-cons">
+          <div class="reviewCon" *ngFor="let con of story.fields.reviewCons">
+            <fa-icon [icon]="faMinusCircle"></fa-icon>{{ con }}
+          </div>
+        </div>
+        <div id="review-badge">
+          <div id="review-badge-number">
+            {{ story.fields.reviewScore }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section id="next-up-section">
     <div id="next-up-section-header">
       Next Up In <a [routerLink]="['/reviews']">Reviews</a>

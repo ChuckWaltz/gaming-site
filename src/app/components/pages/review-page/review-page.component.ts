@@ -5,6 +5,8 @@ import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
 import { Entry } from 'contentful';
 import { StoryService } from 'src/app/services/story-service/story.service';
 
+import { faPlusCircle, faMinusCircle } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-review-page',
   templateUrl: './review-page.component.html',
@@ -91,6 +93,9 @@ export class ReviewPageComponent implements OnInit {
   storyBodyContent: any;
 
   nextUpStories: Entry<any>[];
+
+  faPlusCircle = faPlusCircle;
+  faMinusCircle = faMinusCircle;
 
   ngOnInit(): void {}
 }
