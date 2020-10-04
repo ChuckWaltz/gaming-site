@@ -16,7 +16,9 @@
       {{ story.sys.updatedAt | date: "MMMM dd, yyyy, h:mm a" }}
     </div>
   </section>
-  <img id="top-img" [src]="story.fields.mainImage.fields.file.url" />
+  <section id="top-img-section">
+    <img id="top-img" [src]="story.fields.mainImage.fields.file.url" />
+  </section>
   <section id="story-body" [innerHTML]="storyBodyContent"></section>
   <section id="next-up-section">
     <div id="next-up-section-header">

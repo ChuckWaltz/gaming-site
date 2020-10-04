@@ -43,9 +43,24 @@
   }
 }
 
+#top-img-section {
+  width: 100%;
+  height: 70vh;
+  min-height: 200px;
+  max-height: 800px;
+  margin: 10px 0;
+  margin-bottom: 0;
+  overflow: hidden;
+  position: relative;
+}
+
 #top-img {
   width: 100%;
-  margin: 10px 0;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #story-body {
@@ -81,8 +96,12 @@
 }
 
 @media (min-width: 728px) {
-  #page-wrapper {
+  #top-section,
+  #story-body,
+  #next-up-section {
     max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   #top-section {
@@ -93,7 +112,10 @@
 }
 
 @media (min-width: 1200px) {
-  #page-wrapper {
+  #top-section,
+  #story-body,
+  #next-up-section,
+  #score-section-content {
     max-width: min(1250px, 70vw);
   }
 }
