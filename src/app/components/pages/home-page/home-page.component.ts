@@ -13,20 +13,31 @@ export class HomePageComponent implements OnInit {
 
   @ViewChild(StoryGridComponent) storyGridRef: StoryGridComponent;
 
-  stories: Entry<any>[];
+  stories: Entry<any>[] = [];
 
-  canGetMoreStories: boolean = true;
+  pageSize: number = 15;
+  currentPage: number = 1;
+  storyLimitReached: boolean = true;
 
   ngOnInit(): void {
-    this.storyService
-      .getStories({ order: '-sys.updatedAt' })
-      .then((stories) => {
-        this.stories = [...stories];
-        console.log(this.stories);
+    this.getStories(true);
+  }
 
-        setTimeout(() => {
-          this.storyGridRef.updateGrid();
-        });
+  getStories(initial: boolean = false): void {
+    this.currentPage++;
+
+    if (initial) this.currentPage = 1;
+
+    this.storyService
+      .getStories({
+        order: '-sys.updatedAt',
+        limit: this.pageSize,
+        skip: this.pageSize * (this.currentPage - 1),
+      })
+      .then((stories) => {
+        this.storyLimitReached = stories.length < this.pageSize;
+        this.stories = this.stories.concat([...stories]);
+        console.log(this.stories);
       });
   }
 

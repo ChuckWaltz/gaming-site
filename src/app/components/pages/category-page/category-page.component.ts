@@ -21,7 +21,6 @@ export class CategoryPageComponent implements OnInit {
 
   pageSize: number = 15;
   currentPage: number = 1;
-
   storyLimitReached: boolean = true;
 
   ngOnInit(): void {
