@@ -16,9 +16,14 @@
       {{ story.sys.updatedAt | date: "MMMM dd, yyyy, h:mm a" }}
     </div>
   </section>
-  <section id="top-img-section">
-    <img id="top-img" [src]="story.fields.mainImage.fields.file.url" />
-  </section>
+  <section
+    id="top-img-section"
+    [ngStyle]="{
+      background: 'url(' + story.fields.mainImage.fields.file.url + ')',
+      'background-position': story.fields.imageFocus,
+      'background-size': 'cover'
+    }"
+  ></section>
   <section id="story-body" [innerHTML]="storyBodyContent"></section>
   <section id="next-up-section">
     <div id="next-up-section-header">
