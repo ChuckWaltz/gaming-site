@@ -1,21 +1,57 @@
 <div id="page-wrapper" *ngIf="story">
-  <section id="podcast-section">[[PODCAST]]</section>
-
-  <section id="bottom-section">
-    <div id="story-tags-container">
-      <div class="storyTag">{{ story.fields.category }}</div>
-      <div class="storyTag" *ngFor="let tag of story.fields.tags">
-        {{ tag }}
+  <section id="podcast-section">
+    <div
+      id="podcast-section-inner"
+      [style.backgroundImage]="
+        'url(' + story.fields.mainImage.fields.file.url + ')'
+      "
+    >
+      <div
+        class="podcast-overlay"
+        [ngClass]="{ 'podcast-overlay-active': podcastPlaying }"
+      >
+        <div class="spinner" id="spinner-left">
+          <img src="assets/podcast_spool.png" />
+        </div>
+        <div class="spinner" id="spinner-right">
+          <img src="assets/podcast_spool.png" />
+        </div>
       </div>
     </div>
+    <div id="podcast-section-bottom">
+      <section id="podcast-info-section">
+        <div id="story-tags-container">
+          <div class="storyTag">{{ story.fields.category }}</div>
+          <div class="storyTag" *ngFor="let tag of story.fields.tags">
+            {{ tag }}
+          </div>
+        </div>
 
-    <h1 class="storyTitle">{{ story.fields.title }}</h1>
-    <h3 class="storySubText">{{ story.fields.subText }}</h3>
-    <div class="storyByLine">
-      By
-      <span class="storyAuthor">{{ story.fields.author.fields.name }}</span>
-      &nbsp;|
-      {{ story.sys.updatedAt | date: "MMMM dd, yyyy, h:mm a" }}
+        <h1 class="storyTitle">{{ story.fields.title }}</h1>
+        <h3 class="storySubText">{{ story.fields.subText }}</h3>
+        <div class="storyByLine">
+          By
+          <span class="storyAuthor">{{ story.fields.author.fields.name }}</span>
+          &nbsp;|
+          {{ story.sys.updatedAt | date: "MMMM dd, yyyy, h:mm a" }}
+        </div>
+      </section>
+      <audio controls id="podcast-audio">
+        <source
+          [attr.src]="story.fields.podcast.fields.source.fields.file.url"
+          type="audio/mpeg"
+        />
+        Your browser does not support the audio element.
+      </audio>
+      <div
+        id="podcast-controls"
+        [ngClass]="{ 'podcast-controls-active': podcastPlaying }"
+      >
+        <div id="podcast-control-play" (click)="togglePodcast()">
+          <fa-icon [icon]="faPlay" *ngIf="!podcastPlaying"></fa-icon>
+          <fa-icon [icon]="faPause" *ngIf="podcastPlaying"></fa-icon>
+        </div>
+      </div>
     </div>
   </section>
 

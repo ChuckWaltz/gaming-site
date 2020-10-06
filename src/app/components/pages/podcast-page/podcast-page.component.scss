@@ -1,0 +1,253 @@
+#page-wrapper {
+  margin: auto;
+}
+
+#podcast-section {
+  padding: 15px;
+}
+
+#podcast-section {
+  background-color: rgb(41, 41, 41);
+  border-radius: 10px;
+  padding: 20px;
+  padding-bottom: 0;
+  box-shadow: inset 0px 1px 6px 3px greenyellow;
+  margin-top: 15px;
+
+  #podcast-section-inner {
+    position: relative;
+    height: 250px;
+    background-color: rgb(75, 75, 75);
+    border-radius: 5px;
+
+    background-size: cover;
+    background-position: center;
+
+    h3 {
+      color: white;
+      font-size: 42px;
+      font-weight: 900;
+      font-family: "Fira Sans", sans-serif;
+      margin: 0;
+
+      span {
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .podcast-overlay {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0, 128, 0, 0.3);
+      width: 100%;
+      height: 100%;
+
+      #spinners-container {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .spinner {
+        flex-grow: 1;
+        text-align: center;
+        img {
+          height: 0px;
+          width: 0px;
+          animation: spin 5s linear;
+          animation-iteration-count: infinite;
+          transition: all 0.5s;
+        }
+      }
+    }
+
+    .podcast-overlay-active {
+      .spinner {
+        img {
+          height: 90px;
+          width: 90px;
+        }
+      }
+    }
+  }
+
+  #podcast-section-bottom {
+    text-align: center;
+    color: white;
+
+    #podcast-controls {
+      margin-top: 10px;
+
+      #podcast-control-play {
+        text-align: center;
+        max-width: 150px;
+        margin: auto;
+        font-size: 36px;
+        border: 2px solid rgb(31, 31, 31);
+        border-radius: 5px 5px 10px 10px;
+        border-bottom: none;
+        padding: 20px;
+        cursor: pointer;
+
+        i {
+          padding: 20px;
+          padding-top: 10px;
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+      }
+    }
+
+    .podcast-controls-active {
+      #podcast-control-play {
+        box-shadow: inset 0px 0px 15px black;
+      }
+    }
+
+    #podcast-header {
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+      padding-bottom: 10px;
+
+      h2 {
+        margin: 0;
+        padding: 0;
+        padding-top: 5px;
+        font-family: "Fira Sans", sans-serif;
+        font-size: 48px;
+        font-weight: 900;
+        font-style: italic;
+        color: greenyellow;
+      }
+
+      h3 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 16px;
+        margin: 0;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+audio {
+  width: 100%;
+}
+
+audio::-webkit-media-controls-play-button {
+  display: none;
+}
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#podcast-info-section {
+  padding: 15px;
+
+  #story-tags-container {
+    .storyTag {
+      color: white;
+      background-color: var(--primary-color);
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 12px;
+      margin-right: 8px;
+      text-transform: uppercase;
+    }
+  }
+
+  .storyTitle {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .storySubText {
+    font-size: 20px;
+    color: white;
+    font-style: italic;
+    font-weight: lighter;
+    margin-top: 10px;
+  }
+
+  .storyByLine {
+    margin-top: 12px;
+    font-size: 14px;
+
+    .storyAuthor {
+      color: var(--primary-color);
+      font-style: italic;
+    }
+  }
+}
+
+#next-up-section {
+  padding: 15px;
+
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  #next-up-section-header {
+    font-size: 24px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid lightgray;
+  }
+
+  .nextUpItem {
+    font-size: 18px;
+    margin-top: 15px;
+
+    a {
+      cursor: pointer;
+    }
+  }
+}
+
+@media (min-width: 728px) {
+  #page-wrapper {
+    max-width: 800px;
+  }
+
+  #top-section {
+    .storyTitle {
+      font-size: 48px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+}

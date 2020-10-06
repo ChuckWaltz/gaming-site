@@ -4,6 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Entry } from 'contentful';
 import { StoryService } from 'src/app/services/story-service/story.service';
 
+import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-podcast-page',
   templateUrl: './podcast-page.component.html',
@@ -45,5 +47,28 @@ export class PodcastPageComponent implements OnInit {
 
   nextUpStories: Entry<any>[];
 
-  ngOnInit(): void {}
+  podcastAudio: HTMLVideoElement;
+  podcastPlaying: boolean = false;
+
+  faPlay = faPlay;
+  faPause = faPause;
+
+  ngOnInit(): void {
+    let initInterval = setInterval(() => {
+      if (this.podcastAudio) clearInterval(initInterval);
+      this.podcastAudio = <HTMLVideoElement>(
+        document.getElementById('podcast-audio')
+      );
+    }, 100);
+  }
+
+  togglePodcast() {
+    if (this.podcastAudio && this.podcastPlaying) {
+      this.podcastAudio.pause();
+      this.podcastPlaying = false;
+    } else {
+      this.podcastAudio.play();
+      this.podcastPlaying = true;
+    }
+  }
 }

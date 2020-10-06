@@ -7,6 +7,7 @@ import { VideoPageComponent } from './components/pages/video-page/video-page.com
 import { ReviewPageComponent } from './components/pages/review-page/review-page.component';
 import { FeaturePageComponent } from './components/pages/feature-page/feature-page.component';
 import { SearchPageComponent } from './components/pages/search-page/search-page.component';
+import { PodcastPageComponent } from './components/pages/podcast-page/podcast-page.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -48,6 +49,14 @@ const routes: Routes = [
     path: 'reviews',
     component: CategoryPageComponent,
     data: { category: 'reviews' },
+  },
+  {
+    path: 'podcasts/:id',
+    component: PodcastPageComponent,
+  },
+  {
+    path: 'podcasts/:id/:title',
+    component: PodcastPageComponent,
   },
   {
     path: 'podcasts',
