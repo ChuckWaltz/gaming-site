@@ -41,7 +41,19 @@
       </div>
       <div class="navItem navItemList">
         MORE<fa-icon [icon]="faCaretDown"></fa-icon>
+        <div class="navItemDropdown">
+          <div class="navDropdownItem hide-xl" (click)="routeTo('features')">
+            Features
+          </div>
+          <div class="navDropdownItem hide-md" (click)="routeTo('podcasts')">
+            Podcasts
+          </div>
+          <div class="navDropdownItem hide-lg" (click)="routeTo('reviews')">
+            Reviews
+          </div>
+        </div>
       </div>
+
       <div class="navItemsEnd">
         <div class="navItem show-xl">
           <fa-icon [icon]="faFacebook"></fa-icon>

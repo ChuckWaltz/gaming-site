@@ -125,6 +125,10 @@ p {
     display: inherit !important;
   }
 
+  .hide-md {
+    display: none !important;
+  }
+
   .embeddedEntry {
     display: flex;
     padding-bottom: 10px;
@@ -155,10 +159,16 @@ p {
   .show-lg {
     display: inherit !important;
   }
+  .hide-lg {
+    display: none !important;
+  }
 }
 
 @media (min-width: 1200px) {
   .show-xl {
     display: inherit !important;
+  }
+  .hide-xl {
+    display: none !important;
   }
 }
