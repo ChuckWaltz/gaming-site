@@ -31,7 +31,7 @@
 
     background-image: linear-gradient(
       to top,
-      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0) 50%
     );
 
@@ -123,7 +123,7 @@
       .sgiTitle {
         color: rgb(25, 25, 25);
         text-transform: unset;
-        font-size: 18px;
+        font-size: 22px;
       }
 
       .sgiTag {
@@ -183,10 +183,18 @@
 
     .sgi-medium {
       flex-basis: calc(100% - 2px * 2);
+
+      .sgiTitle {
+        font-size: 32px;
+      }
     }
 
     .sgi-large {
       flex-basis: calc(100% - 2px * 2);
+
+      .sgiTitle {
+        font-size: 38px;
+      }
     }
   }
 }
@@ -215,7 +223,7 @@
 
     .sgi:not(.sgi-medium):not(.sgi-large) {
       .sgiTitle {
-        font-size: 20px;
+        font-size: 24px;
       }
     }
   }
@@ -225,7 +233,7 @@
   .storyGrid {
     .sgi:not(.sgi-medium):not(.sgi-large) {
       .sgiTitle {
-        font-size: 22px;
+        font-size: 24px;
       }
     }
   }
