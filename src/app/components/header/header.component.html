@@ -1,81 +1,83 @@
 <header>
   <div id="nav-container">
-    <div id="logo-container">
-      <img src="../../assets/lime_logo.png" (click)="routeTo('')" />
-    </div>
-    <nav>
-      <div
-        class="navItem navItemList"
-        [ngClass]="{ navItemActive: category === 'news' }"
-        (click)="routeTo('news')"
-      >
-        NEWS<!-- <fa-icon [icon]="faCaretDown"></fa-icon> -->
+    <div id="nav-container-inner">
+      <div id="logo-container">
+        <img src="../../assets/lime_logo.png" (click)="routeTo('')" />
       </div>
-      <div
-        class="navItem navItemList"
-        [ngClass]="{ navItemActive: category === 'videos' }"
-        (click)="routeTo('videos')"
-      >
-        VIDEOS<!-- <fa-icon [icon]="faCaretDown"></fa-icon> -->
-      </div>
-      <div
-        class="navItem navItemList show-lg"
-        [ngClass]="{ navItemActive: category === 'reviews' }"
-        (click)="routeTo('reviews')"
-      >
-        REVIEWS<!-- <fa-icon [icon]="faCaretDown"></fa-icon> -->
-      </div>
-      <div
-        class="navItem navItemList show-md"
-        [ngClass]="{ navItemActive: category === 'podcasts' }"
-        (click)="routeTo('podcasts')"
-      >
-        PODCASTS<!-- <fa-icon [icon]="faCaretDown"></fa-icon> -->
-      </div>
-      <div
-        class="navItem navItemList show-xl"
-        [ngClass]="{ navItemActive: category === 'features' }"
-        (click)="routeTo('features')"
-      >
-        FEATURES
-      </div>
-      <div class="navItem navItemList hide-xl">
-        MORE<fa-icon [icon]="faCaretDown"></fa-icon>
-        <div class="navItemDropdown">
-          <div class="navDropdownItem hide-xl" (click)="routeTo('features')">
-            Features
-          </div>
-          <div class="navDropdownItem hide-md" (click)="routeTo('podcasts')">
-            Podcasts
-          </div>
-          <div class="navDropdownItem hide-lg" (click)="routeTo('reviews')">
-            Reviews
+      <nav>
+        <div
+          class="navItem navItemList"
+          [ngClass]="{ navItemActive: category === 'news' }"
+          (click)="routeTo('news')"
+        >
+          NEWS<!-- <fa-icon [icon]="faCaretDown"></fa-icon> -->
+        </div>
+        <div
+          class="navItem navItemList"
+          [ngClass]="{ navItemActive: category === 'videos' }"
+          (click)="routeTo('videos')"
+        >
+          VIDEOS<!-- <fa-icon [icon]="faCaretDown"></fa-icon> -->
+        </div>
+        <div
+          class="navItem navItemList show-lg"
+          [ngClass]="{ navItemActive: category === 'reviews' }"
+          (click)="routeTo('reviews')"
+        >
+          REVIEWS<!-- <fa-icon [icon]="faCaretDown"></fa-icon> -->
+        </div>
+        <div
+          class="navItem navItemList show-md"
+          [ngClass]="{ navItemActive: category === 'podcasts' }"
+          (click)="routeTo('podcasts')"
+        >
+          PODCASTS<!-- <fa-icon [icon]="faCaretDown"></fa-icon> -->
+        </div>
+        <div
+          class="navItem navItemList show-xl"
+          [ngClass]="{ navItemActive: category === 'features' }"
+          (click)="routeTo('features')"
+        >
+          FEATURES
+        </div>
+        <div class="navItem navItemList hide-xl">
+          MORE<fa-icon [icon]="faCaretDown"></fa-icon>
+          <div class="navItemDropdown">
+            <div class="navDropdownItem hide-xl" (click)="routeTo('features')">
+              Features
+            </div>
+            <div class="navDropdownItem hide-md" (click)="routeTo('podcasts')">
+              Podcasts
+            </div>
+            <div class="navDropdownItem hide-lg" (click)="routeTo('reviews')">
+              Reviews
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="navItemsEnd">
-        <div class="navItem show-xl">
-          <fa-icon [icon]="faFacebook"></fa-icon>
+        <div class="navItemsEnd">
+          <div class="navItem show-xl">
+            <fa-icon [icon]="faFacebook"></fa-icon>
+          </div>
+          <div class="navItem show-xl">
+            <fa-icon [icon]="faTwitter"></fa-icon>
+          </div>
+          <div class="navItem show-xl">
+            <fa-icon [icon]="faYoutube"></fa-icon>
+          </div>
+          <div class="navItem show-xl" id="subscribe-button">
+            <fa-icon [icon]="faEnvelope"></fa-icon>
+            SUBSCRIBE
+          </div>
+          <div class="navItem navItemList" id="user-button">
+            <fa-icon [icon]="faUser"></fa-icon>
+          </div>
+          <div class="navItem navItemList show-xl" (click)="toggleSearchBar()">
+            <fa-icon [icon]="faSearch"></fa-icon>
+          </div>
         </div>
-        <div class="navItem show-xl">
-          <fa-icon [icon]="faTwitter"></fa-icon>
-        </div>
-        <div class="navItem show-xl">
-          <fa-icon [icon]="faYoutube"></fa-icon>
-        </div>
-        <div class="navItem show-xl" id="subscribe-button">
-          <fa-icon [icon]="faEnvelope"></fa-icon>
-          SUBSCRIBE
-        </div>
-        <div class="navItem navItemList" id="user-button">
-          <fa-icon [icon]="faUser"></fa-icon>
-        </div>
-        <div class="navItem navItemList show-xl" (click)="toggleSearchBar()">
-          <fa-icon [icon]="faSearch"></fa-icon>
-        </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </div>
   <div id="search-bar" [ngClass]="{ searchBarActive: searchBarActive }">
     <div id="search-bar-inner">
