@@ -5,6 +5,8 @@
 #top-section {
   margin-top: 10px;
   padding: 15px;
+  max-width: 800px;
+  margin: auto;
 
   #story-tags-container {
     .storyTag {
@@ -45,7 +47,8 @@
 
 #top-img {
   width: 100%;
-  margin: 10px 0;
+  max-width: 800px;
+  margin: 10px auto;
 }
 
 #news-story-body {
@@ -56,6 +59,9 @@
 
 #next-up-section {
   padding: 15px;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
 
   a {
     color: var(--primary-color);

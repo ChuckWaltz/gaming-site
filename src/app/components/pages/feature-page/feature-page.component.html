@@ -1,4 +1,12 @@
 <div id="page-wrapper" *ngIf="story">
+  <section
+    id="top-img-section"
+    [ngStyle]="{
+      background: 'url(' + story.fields.mainImage.fields.file.url + ')',
+      'background-position': story.fields.imageFocus,
+      'background-size': 'cover'
+    }"
+  ></section>
   <section id="top-section">
     <div id="story-tags-container">
       <div class="storyTag">{{ story.fields.category }}</div>
@@ -15,15 +23,8 @@
       &nbsp;|
       {{ story.sys.updatedAt | date: "MMMM dd, yyyy, h:mm a" }}
     </div>
+    <hr />
   </section>
-  <section
-    id="top-img-section"
-    [ngStyle]="{
-      background: 'url(' + story.fields.mainImage.fields.file.url + ')',
-      'background-position': story.fields.imageFocus,
-      'background-size': 'cover'
-    }"
-  ></section>
   <section id="feature-story-body" [innerHTML]="storyBodyContent"></section>
   <section id="next-up-section">
     <div id="next-up-section-header">
