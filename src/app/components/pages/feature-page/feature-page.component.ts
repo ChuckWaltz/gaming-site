@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { MARKS, BLOCKS, INLINES } from '@contentful/rich-text-types';
@@ -9,6 +9,7 @@ import { StoryService } from 'src/app/services/story-service/story.service';
   selector: 'app-feature-page',
   templateUrl: './feature-page.component.html',
   styleUrls: ['./feature-page.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class FeaturePageComponent implements OnInit {
   constructor(
@@ -70,8 +71,8 @@ export class FeaturePageComponent implements OnInit {
           story.fields.body,
           richTextOptions
         );
-        console.log(story);
-        console.log(this.storyBodyContent);
+        //console.log(story);
+        //console.log(this.storyBodyContent);
       });
 
       this.storyService
