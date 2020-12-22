@@ -52,7 +52,7 @@
   overflow: hidden;
 }
 
-#story-body {
+#review-story-body {
   padding: 15px;
 }
 
@@ -161,7 +161,7 @@
   }
 
   #top-section,
-  #story-body,
+  #review-story-body,
   #next-up-section,
   #score-section-content {
     max-width: 900px;
@@ -194,7 +194,7 @@
 
 @media (min-width: 1200px) {
   #top-section,
-  #story-body,
+  #review-story-body,
   #next-up-section,
   #score-section-content {
     max-width: min(1250px, 70vw);

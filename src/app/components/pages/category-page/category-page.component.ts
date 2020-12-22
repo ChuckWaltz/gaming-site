@@ -11,8 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class CategoryPageComponent implements OnInit {
   constructor(
     public storyService: StoryService,
-    private route: ActivatedRoute,
-    private cdr: ChangeDetectorRef
+    private route: ActivatedRoute
   ) {}
 
   category: string;

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { StoryService } from 'src/app/services/story-service/story.service';
 import { Entry } from 'contentful';
 import { StoryGridComponent } from '../../story-grid/story-grid.component';

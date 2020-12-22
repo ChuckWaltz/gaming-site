@@ -9,7 +9,6 @@ import { StoryService } from 'src/app/services/story-service/story.service';
   selector: 'app-feature-page',
   templateUrl: './feature-page.component.html',
   styleUrls: ['./feature-page.component.scss'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class FeaturePageComponent implements OnInit {
   constructor(
