@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import {
   faCaretDown,
   faUser,
@@ -33,6 +39,22 @@ export class HeaderComponent implements OnInit {
 
   searchBarActive: boolean = false;
   searchValue: string;
+
+  @ViewChild('toggleSearchButton') toggleSearchButtonRef: ElementRef;
+  @ViewChild('searchBar') searchBarRef: ElementRef;
+
+  @HostListener('document:click', ['$event'])
+  clickout(event) {
+    setTimeout(() => {
+      if (
+        !this.toggleSearchButtonRef.nativeElement.contains(event.target) &&
+        !this.searchBarRef.nativeElement.contains(event.target) &&
+        this.searchBarActive
+      ) {
+        this.toggleSearchBar();
+      }
+    });
+  }
 
   ngOnInit(): void {
     this.router.events.subscribe((e) => {

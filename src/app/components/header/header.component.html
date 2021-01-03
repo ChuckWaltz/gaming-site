@@ -72,14 +72,22 @@
           <div class="navItem navItemList" id="user-button">
             <fa-icon [icon]="faUser"></fa-icon>
           </div>
-          <div class="navItem navItemList show-xl" (click)="toggleSearchBar()">
+          <div
+            class="navItem navItemList show-xl"
+            (click)="toggleSearchBar()"
+            #toggleSearchButton
+          >
             <fa-icon [icon]="faSearch"></fa-icon>
           </div>
         </div>
       </nav>
     </div>
   </div>
-  <div id="search-bar" [ngClass]="{ searchBarActive: searchBarActive }">
+  <div
+    id="search-bar"
+    [ngClass]="{ searchBarActive: searchBarActive }"
+    #searchBar
+  >
     <div id="search-bar-inner">
       <input
         id="search-input"
