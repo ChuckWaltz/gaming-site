@@ -36,7 +36,7 @@ export class SearchPageComponent implements OnInit {
       })
       .then((stories) => {
         this.stories = stories;
-        console.log(this.stories);
+        /* console.log(this.stories); */
       });
   }
 }

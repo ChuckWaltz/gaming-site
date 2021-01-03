@@ -72,8 +72,8 @@ export class ReviewPageComponent implements OnInit {
           story.fields.body,
           richTextOptions
         );
-        console.log(story);
-        console.log(this.storyBodyContent);
+        /* console.log(story);
+        console.log(this.storyBodyContent); */
       });
 
       this.storyService

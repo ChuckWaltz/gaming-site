@@ -25,7 +25,7 @@ export class VideoPageComponent implements OnInit {
 
       this.storyService.getStory(storyId).then((story) => {
         this.story = story;
-        console.log(story);
+        /* console.log(story); */
       });
 
       this.storyService

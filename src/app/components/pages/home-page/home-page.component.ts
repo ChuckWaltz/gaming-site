@@ -37,7 +37,7 @@ export class HomePageComponent implements OnInit {
       .then((stories) => {
         this.storyLimitReached = stories.length < this.pageSize;
         this.stories = this.stories.concat([...stories]);
-        console.log(this.stories);
+        /* console.log(this.stories); */
       });
   }
 

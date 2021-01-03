@@ -70,8 +70,8 @@ export class NewsPageComponent implements OnInit {
           story.fields.body,
           richTextOptions
         );
-        console.log(story);
-        console.log(this.storyBodyContent);
+        /* console.log(story);
+        console.log(this.storyBodyContent); */
       });
 
       this.storyService
