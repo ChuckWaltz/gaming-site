@@ -136,6 +136,10 @@
         color: rgb(25, 25, 25);
       }
 
+      .sgiAuthor {
+        color: var(--primary-color);
+      }
+
       &:hover {
         .sgiTitle {
           color: var(--primary-color);

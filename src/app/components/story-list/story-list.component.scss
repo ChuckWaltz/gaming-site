@@ -34,6 +34,10 @@
     .listStoryTitle {
       color: var(--primary-color);
     }
+
+    .listStoryImg {
+      box-shadow: -5px 0px 0px 0px var(--primary-color);
+    }
   }
 }
 
@@ -47,10 +51,6 @@
   background-color: var(--placeholder-color);
   background-position: center;
   background-size: cover;
-
-  &:hover {
-    box-shadow: -3px 0px 0px 0px var(--primary-color);
-  }
 }
 
 .listStoryContent {
@@ -79,6 +79,10 @@
     font-weight: lighter;
     font-style: italic;
     margin-top: 5px;
+  }
+
+  .listStoryAuthor {
+    color: var(--primary-color);
   }
 }
 
@@ -128,12 +132,6 @@
 @media (min-width: 1200px) {
   #story-list {
     max-width: min(80vw, 1200px);
-
-    .listStoryImg {
-      &:hover {
-        box-shadow: -5px 0px 0px 0px var(--primary-color);
-      }
-    }
 
     .listStoryContent {
       padding: 10px 15px;

@@ -22,7 +22,11 @@
       <div class="listStoryTag">{{ story.fields.category }}</div>
       <div class="listStoryTitle">{{ story.fields.title }}</div>
       <div class="listStoryByLine">
-        By: {{ story.fields.author.fields.name }} |
+        By:
+        <span class="listStoryAuthor">{{
+          story.fields.author.fields.name
+        }}</span>
+        |
         {{ story.sys.updatedAt | date: "MMMM d" }}
       </div>
     </div>

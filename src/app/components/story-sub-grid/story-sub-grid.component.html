@@ -12,7 +12,10 @@
       <div class="sgiContent">
         <div class="sgiTag">{{ story.fields.category }}</div>
         <div class="sgiTitle">{{ story.fields.title }}</div>
-        <div class="sgiByLine">By: {{ story.fields.author.fields.name }}</div>
+        <div class="sgiByLine">
+          By:
+          <span class="sgiAuthor">{{ story.fields.author.fields.name }}</span>
+        </div>
       </div>
     </div>
   </div>
