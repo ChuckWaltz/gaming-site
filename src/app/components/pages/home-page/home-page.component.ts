@@ -15,7 +15,7 @@ export class HomePageComponent implements OnInit {
 
   stories: Entry<any>[] = [];
 
-  pageSize: number = 15;
+  pageSize: number = 10;
   currentPage: number = 1;
   storyLimitReached: boolean = true;
 
@@ -31,8 +31,8 @@ export class HomePageComponent implements OnInit {
     this.storyService
       .getStories({
         order: '-sys.updatedAt',
-        limit: this.pageSize,
-        skip: this.pageSize * (this.currentPage - 1),
+        limit: this.currentPage === 1 ? this.pageSize + 11 : this.pageSize,
+        skip: this.stories.length,
       })
       .then((stories) => {
         this.storyLimitReached = stories.length < this.pageSize;

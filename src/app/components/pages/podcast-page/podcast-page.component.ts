@@ -33,6 +33,7 @@ export class PodcastPageComponent implements OnInit {
       this.storyService
         .getStories({
           'fields.category': 'Podcasts',
+          limit: 5,
           order: '-sys.updatedAt',
         })
         .then((stories) => {

@@ -31,6 +31,7 @@ export class VideoPageComponent implements OnInit {
       this.storyService
         .getStories({
           'fields.category': 'Videos',
+          limit: 5,
           order: '-sys.updatedAt',
         })
         .then((stories) => {

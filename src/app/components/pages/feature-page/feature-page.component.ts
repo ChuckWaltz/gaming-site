@@ -77,6 +77,7 @@ export class FeaturePageComponent implements OnInit {
       this.storyService
         .getStories({
           'fields.category': 'Features',
+          limit: 5,
           order: '-sys.updatedAt',
         })
         .then((stories) => {

@@ -79,6 +79,7 @@ export class ReviewPageComponent implements OnInit {
       this.storyService
         .getStories({
           'fields.category': 'Reviews',
+          limit: 5,
           order: '-sys.updatedAt',
         })
         .then((stories) => {

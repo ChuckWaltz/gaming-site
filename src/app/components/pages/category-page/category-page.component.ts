@@ -18,7 +18,7 @@ export class CategoryPageComponent implements OnInit {
 
   stories: Entry<any>[] = [];
 
-  pageSize: number = 15;
+  pageSize: number = 8;
   currentPage: number = 1;
   storyLimitReached: boolean = true;
 
@@ -39,8 +39,8 @@ export class CategoryPageComponent implements OnInit {
       .getStories({
         'fields.category': this.category,
         order: '-sys.updatedAt',
-        limit: this.pageSize,
-        skip: this.pageSize * (this.currentPage - 1),
+        limit: this.currentPage === 1 ? this.pageSize + 2 : this.pageSize,
+        skip: this.stories.length,
       })
       .then((stories) => {
         this.storyLimitReached = stories.length < this.pageSize;

@@ -77,6 +77,7 @@ export class NewsPageComponent implements OnInit {
       this.storyService
         .getStories({
           'fields.category': 'News',
+          limit: 5,
           order: '-sys.updatedAt',
         })
         .then((stories) => {
