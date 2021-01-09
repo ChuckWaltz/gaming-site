@@ -1,3 +1,8 @@
 <div id="page-wrapper">
-  <app-story-list [stories]="stories" [category]="'Search'"></app-story-list>
+  <app-story-list
+    [stories]="stories"
+    [category]="'Search'"
+    [storyLimitReached]="storyLimitReached"
+    (getStories)="searchStories()"
+  ></app-story-list>
 </div>

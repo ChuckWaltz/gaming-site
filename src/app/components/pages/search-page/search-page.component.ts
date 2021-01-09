@@ -21,22 +21,24 @@ export class SearchPageComponent implements OnInit {
     });
   }
 
-  stories: Entry<any>[];
+  stories: Entry<any>[] = [];
 
-  ngOnInit(): void {
-    this.searchStories();
-  }
+  storyLimitReached: boolean = true;
+
+  ngOnInit(): void {}
 
   searchStories(): void {
     let searchString = this.route.snapshot.queryParams['search'];
+
     this.storyService
       .getStories({
         query: searchString,
         order: '-sys.updatedAt',
+        /* limit: this.pageSize,
+        skip: this.stories.length, */
       })
       .then((stories) => {
         this.stories = stories;
-        /* console.log(this.stories); */
       });
   }
 }
